@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.os.Bundle;
 
 public class MainActivity extends AppCompatActivity {
@@ -21,9 +20,10 @@ public class MainActivity extends AppCompatActivity {
         Blogin.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                Intent Login = new Intent(MainActivity.this,login.class);
+                Intent Login = new Intent(MainActivity.this, Login.class);
 
-                startActivity(Login);             }
+                startActivity(Login);
+            }
         });
     }
 }

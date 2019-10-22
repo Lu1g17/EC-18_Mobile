@@ -4,12 +4,12 @@ import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class articolo extends AppCompatActivity {
+public class Article extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.articolo);
+        setContentView(R.layout.article);
     }
 }
 

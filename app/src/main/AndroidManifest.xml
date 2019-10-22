@@ -19,7 +19,13 @@
         <activity android:name=".Login">
 
         </activity>
-        <activity android:name=".Registration">
+        <activity android:name=".Registration1">
+
+        </activity>
+        <activity android:name=".Registration2">
+
+        </activity>
+        <activity android:name=".Registration3">
 
         </activity>
     </application>

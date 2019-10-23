@@ -36,6 +36,10 @@
 
         <activity android:name=".Catalog"/>
 
+        <activity android:name=".Pagamento1"/>
+
+        <activity android:name=".Pagamento2"/>
+
     </application>
 
 </manifest>

@@ -22,23 +22,23 @@
 
         <activity android:name=".Login"/>
 
-        <activity android:name=".Registration1"/>
+        <activity android:name=".RegistrationEmail"/>
 
-        <activity android:name=".Registration2"/>
+        <activity android:name=".RegistrationPassword"/>
 
-        <activity android:name=".Registration3"/>
+        <activity android:name=".Registration"/>
 
         <activity android:name=".Search"/>
 
         <activity android:name=".Profile"/>
 
-        <activity android:name=".Profileupdate"/>
+        <activity android:name=".ProfileUpdate"/>
 
         <activity android:name=".Catalog"/>
 
-        <activity android:name=".Pagamento1"/>
+        <activity android:name=".Data"/>
 
-        <activity android:name=".Pagamento2"/>
+        <activity android:name=".OrderDetails"/>
 
     </application>
 

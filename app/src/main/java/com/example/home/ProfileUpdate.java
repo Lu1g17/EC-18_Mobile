@@ -4,12 +4,13 @@ import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class Pagamento1 extends AppCompatActivity {
+public class ProfileUpdate extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.pagamento1);
+        setContentView(R.layout.profile_update);
+
 
 
     }

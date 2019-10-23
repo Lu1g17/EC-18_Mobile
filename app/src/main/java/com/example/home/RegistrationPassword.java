@@ -7,18 +7,18 @@ import android.widget.ImageButton;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class Registration2 extends AppCompatActivity {
+public class RegistrationPassword extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.registration2);
+        setContentView(R.layout.registration_password);
 
         ImageButton Bregistration2= (ImageButton) findViewById(R.id.imageButtonAvanti2);
 
         Bregistration2.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                Intent registration2 = new Intent(Registration2.this, Registration3.class);
+                Intent registration2 = new Intent(RegistrationPassword.this, Registration.class);
 
                 startActivity(registration2);
             }

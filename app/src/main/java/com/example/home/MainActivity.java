@@ -18,16 +18,70 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         Button Blogin = findViewById(R.id.buttonLogin);
+        ImageButton homeButton = findViewById(R.id.imageButton5);
+        ImageButton catalog = findViewById(R.id.imageButton6);
+        ImageButton search = findViewById(R.id.imageButton7);
+        ImageButton shoppingCart = findViewById(R.id.imageButton8);
+        ImageButton menu = findViewById(R.id.imageButton9);
 
         Blogin.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                Intent Login = new Intent(MainActivity.this, Login.class);
+                Intent login = new Intent(MainActivity.this, Login.class);
 
-                startActivity(Login);
+                startActivity(login);
             }
 
         });
 
+        homeButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                Intent mainActivity = new Intent(MainActivity.this, MainActivity.class);
+
+                startActivity(mainActivity);
+            }
+
+        });
+
+        catalog.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                Intent catalog = new Intent(MainActivity.this, Catalog.class);
+
+                startActivity(catalog);
+            }
+
+        });
+
+        search.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                Intent search = new Intent(MainActivity.this, Search.class);
+
+                startActivity(search);
+            }
+
+        });
+
+        /*shoppingCart.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                Intent shoppingCart = new Intent(MainActivity.this, ShoppingCart.class);
+
+                startActivity(shoppingCart);
+            }
+
+        });
+
+        menu.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                Intent menu = new Intent(MainActivity.this, Menu.class);
+
+                startActivity(menu);
+            }
+
+        });*/
     }
 }

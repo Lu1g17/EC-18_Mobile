@@ -1,7 +1,79 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:layout_height="50dp"
+    android:background="@color/colorPrimary"
+    android:orientation="horizontal">
 
+    <ImageButton
+        android:id="@+id/imageButton5"
+        android:layout_width="83dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:background="@android:color/transparent"
+        android:baselineAlignBottom="false"
+        android:cropToPadding="false"
+        android:fadeScrollbars="false"
+        android:scaleType="centerInside"
+        app:srcCompat="@drawable/house" />
+
+    <ImageButton
+        android:id="@+id/imageButton6"
+        android:layout_width="82dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:background="@android:color/transparent"
+        android:baselineAlignBottom="false"
+        android:cropToPadding="false"
+        android:fadeScrollbars="false"
+        android:longClickable="false"
+        android:scaleType="centerInside"
+        app:srcCompat="@drawable/catalog" />
+
+    <ImageButton
+        android:id="@+id/imageButton7"
+        android:layout_width="82dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:background="@android:color/transparent"
+        android:baselineAlignBottom="false"
+        android:cropToPadding="false"
+        android:fadeScrollbars="false"
+        android:scaleType="centerInside"
+        app:srcCompat="@drawable/search" />
+
+    <ImageButton
+        android:id="@+id/imageButton8"
+        android:layout_width="82dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:background="@android:color/transparent"
+        android:baselineAlignBottom="false"
+        android:cropToPadding="false"
+        android:fadeScrollbars="false"
+        android:scaleType="centerInside"
+        app:srcCompat="@drawable/shopping_cart" />
+
+
+    <ImageButton
+        android:id="@+id/imageButton9"
+        android:layout_width="83dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:background="@android:color/transparent"
+        android:baselineAlignBottom="false"
+        android:cropToPadding="false"
+        android:fadeScrollbars="false"
+        android:scaleType="centerInside"
+        app:srcCompat="@drawable/menu" />
+
+    <View
+        style="@style/Divider.Vertical"
+        android:background="#000000" />
 </LinearLayout>

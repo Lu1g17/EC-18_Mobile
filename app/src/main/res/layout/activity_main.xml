@@ -2,6 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ConstraintLayoutHome"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
@@ -29,7 +30,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <View
-        android:id="@+id/TopDividerCatalog"
+        android:id="@+id/TopDivider"
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_marginTop="50dp"
@@ -38,32 +39,34 @@
         tools:layout_editor_absoluteX="0dp" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/TextViewHome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
         android:text="In Primo Piano"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/TopDividerCatalog" />
+        app:layout_constraintTop_toBottomOf="@id/TopDivider" />
 
     <ScrollView
+        android:id="@+id/ScrollViewHome"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginTop="5dp"
         android:layout_marginBottom="5dp"
-        app:layout_constraintBottom_toTopOf="@id/BottomDividerCatalog"
+        app:layout_constraintBottom_toTopOf="@id/BottomDivider"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2">
+        app:layout_constraintTop_toBottomOf="@+id/TextViewHome">
 
         <LinearLayout
+            android:id="@+id/LinearLayoutHome"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
             <ImageButton
-                android:id="@+id/imageButton"
+                android:id="@+id/imageButtonHome"
                 android:layout_width="400dp"
                 android:layout_height="225dp"
                 tools:layout_editor_absoluteX="175dp"
@@ -71,7 +74,7 @@
                 tools:srcCompat="@tools:sample/avatars" />
 
             <ImageButton
-                android:id="@+id/imageButton2"
+                android:id="@+id/imageButtonHome2"
                 android:layout_width="400dp"
                 android:layout_height="225dp"
                 tools:layout_editor_absoluteX="270dp"
@@ -79,18 +82,18 @@
                 tools:srcCompat="@tools:sample/avatars" />
 
             <ImageButton
-                android:id="@+id/imageButton3"
+                android:id="@+id/imageButtonHome3"
                 android:layout_width="400dp"
                 android:layout_height="225dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/imageButton4"
+                app:layout_constraintTop_toBottomOf="@+id/imageButtonHome4"
                 app:layout_constraintVertical_bias="1.0"
                 tools:srcCompat="@tools:sample/avatars" />
 
             <ImageButton
-                android:id="@+id/imageButton4"
+                android:id="@+id/imageButtonHome4"
                 android:layout_width="400dp"
                 android:layout_height="225dp"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -105,7 +108,7 @@
     </ScrollView>
 
     <View
-        android:id="@+id/BottomDividerCatalog"
+        android:id="@+id/BottomDivider"
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_marginBottom="50dp"
@@ -115,11 +118,11 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <include
-        android:id="@+id/BottomBarContainerCatalog"
+        android:id="@+id/BottomBarContainer"
         layout="@layout/bottom_bar"
         android:layout_width="410dp"
         android:layout_height="50dp"
-        app:layout_constraintBottom_toTopOf="@id/BottomDividerCatalog"
+        app:layout_constraintBottom_toTopOf="@id/BottomDivider"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="parent"

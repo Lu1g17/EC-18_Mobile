@@ -7,7 +7,6 @@ import android.view.View;
 import android.widget.Button;
 import android.os.Bundle;
 import android.widget.ImageButton;
-import android.widget.ImageView;
 
 public class MainActivity extends AppCompatActivity {
     static boolean autenticato = false;
@@ -18,10 +17,10 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         Button loginButton = findViewById(R.id.LoginButtonHome);
-        ImageButton catalog = findViewById(R.id.imageButton6);
-        ImageButton search = findViewById(R.id.imageButton7);
-        ImageButton shoppingCart = findViewById(R.id.imageButton8);
-        ImageButton menu = findViewById(R.id.imageButton9);
+        ImageButton catalog = findViewById(R.id.imageButtonCatalog);
+        ImageButton search = findViewById(R.id.imageButtonSearch);
+        ImageButton shoppingCart = findViewById(R.id.imageButtonShoppingCart);
+        ImageButton menu = findViewById(R.id.imageButtonMenu);
 
         loginButton.setOnClickListener(new View.OnClickListener(){
             @Override

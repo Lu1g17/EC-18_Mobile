@@ -16,11 +16,11 @@ public class Catalog extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.catalog);
         
-        Button loginButton = findViewById(R.id.LoginButtonCatalog);
-        ImageButton homeButton = findViewById(R.id.imageButton5);
-        ImageButton search = findViewById(R.id.imageButton7);
-        ImageButton shoppingCart = findViewById(R.id.imageButton8);
-        ImageButton menu = findViewById(R.id.imageButton9);
+        Button loginButton = findViewById(R.id.LoginButton);
+        ImageButton homeButton = findViewById(R.id.imageButtonHome);
+        ImageButton search = findViewById(R.id.imageButtonSearch);
+        ImageButton shoppingCart = findViewById(R.id.imageButtonShoppingCart);
+        ImageButton menu = findViewById(R.id.imageButtonMenu);
         TextView clothing = findViewById(R.id.clothingTextView);
 
         loginButton.setOnClickListener(new View.OnClickListener(){
@@ -61,7 +61,7 @@ public class Catalog extends AppCompatActivity {
                 startActivity(shoppingCart);
             }
 
-        });
+        });*/
 
         menu.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -71,7 +71,7 @@ public class Catalog extends AppCompatActivity {
                 startActivity(menu);
             }
 
-        });*/
+        });
         
         clothing.setOnClickListener(new View.OnClickListener(){
             @Override

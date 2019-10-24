@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/ConstraintLayoutHome"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/SectionTextViewCatalog"
+        android:id="@+id/SectionTextView"
         android:layout_width="130dp"
         android:layout_height="40dp"
         android:layout_marginStart="10dp"
@@ -16,7 +17,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/LoginButtonCatalog"
+        android:id="@+id/LoginButton"
         android:layout_width="80dp"
         android:layout_height="40dp"
         android:layout_marginTop="10dp"
@@ -27,7 +28,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <View
-        android:id="@+id/TopDividerCatalog"
+        android:id="@+id/TopDivider"
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_marginTop="50dp"
@@ -46,7 +47,7 @@
         app:layout_constraintBottom_toTopOf="@+id/CategoryBarContainerCatalog"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/TopDividerCatalog" />
+        app:layout_constraintTop_toBottomOf="@id/TopDivider" />
 
     <include
         android:id="@+id/CategoryBarContainerCatalog"
@@ -64,9 +65,9 @@
         android:layout_height="0dp"
         android:layout_marginTop="5dp"
         android:layout_marginBottom="5dp"
-        app:layout_constraintBottom_toTopOf="@id/BottomDividerCatalog"
+        app:layout_constraintBottom_toTopOf="@id/BottomDivider"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/CategoryBarContainerCatalog"/>
+        app:layout_constraintTop_toBottomOf="@id/CategoryBarContainerCatalog" />
 
     <ScrollView
         android:id="@+id/ImageScrollViewCatalog"
@@ -74,7 +75,7 @@
         android:layout_height="0dp"
         android:layout_marginTop="5dp"
         android:layout_marginBottom="5dp"
-        app:layout_constraintBottom_toTopOf="@id/BottomDividerCatalog"
+        app:layout_constraintBottom_toTopOf="@id/BottomDivider"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/FilterScrollViewCatalog"
         app:layout_constraintTop_toBottomOf="@id/CategoryBarContainerCatalog">
@@ -184,7 +185,7 @@
     </ScrollView>
 
     <View
-        android:id="@+id/BottomDividerCatalog"
+        android:id="@+id/BottomDivider"
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_marginBottom="50dp"
@@ -194,11 +195,11 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <include
-        android:id="@+id/BottomBarContainerCatalog"
+        android:id="@+id/BottomBarContainer"
         layout="@layout/bottom_bar"
         android:layout_width="410dp"
         android:layout_height="50dp"
-        app:layout_constraintBottom_toTopOf="@id/BottomDividerCatalog"
+        app:layout_constraintBottom_toTopOf="@id/BottomDivider"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="parent"

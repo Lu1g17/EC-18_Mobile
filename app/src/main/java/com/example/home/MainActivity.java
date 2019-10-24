@@ -17,29 +17,18 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Button Blogin = findViewById(R.id.buttonLogin);
-        ImageButton homeButton = findViewById(R.id.imageButton5);
+        Button loginButton = findViewById(R.id.buttonLogin);
         ImageButton catalog = findViewById(R.id.imageButton6);
         ImageButton search = findViewById(R.id.imageButton7);
         ImageButton shoppingCart = findViewById(R.id.imageButton8);
         ImageButton menu = findViewById(R.id.imageButton9);
 
-        Blogin.setOnClickListener(new View.OnClickListener(){
+        loginButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
                 Intent login = new Intent(MainActivity.this, Login.class);
 
                 startActivity(login);
-            }
-
-        });
-
-        homeButton.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v) {
-                Intent mainActivity = new Intent(MainActivity.this, MainActivity.class);
-
-                startActivity(mainActivity);
             }
 
         });

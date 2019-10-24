@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="390dp"
+    android:layout_height="50dp"
+    android:background="@android:color/transparent"
+    android:orientation="horizontal">
+
+    <Button
+        android:id="@+id/manButton"
+        style="@style/Widget.AppCompat.Button"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:background="@color/colorPrimary"
+        android:text="Uomo"
+        app:layout_constraintEnd_toStartOf="@+id/womanButton"
+        app:layout_constraintStart_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/topDivider" />
+
+    <Button
+        android:id="@+id/womanButton"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:background="@android:color/transparent"
+        android:text="Donna"
+        app:layout_constraintEnd_toStartOf="@+id/kidButton"
+        app:layout_constraintStart_toEndOf="@id/manButton"
+        app:layout_constraintTop_toTopOf="@id/topDivider" />
+
+    <Button
+        android:id="@+id/kidButton"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:background="@android:color/transparent"
+        android:text="Bambino"
+        app:layout_constraintEnd_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/womanButton"
+        app:layout_constraintTop_toTopOf="@id/topDivider" />
+
+</LinearLayout>

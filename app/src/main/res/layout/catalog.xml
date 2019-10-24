@@ -6,7 +6,7 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/textView32"
+        android:id="@+id/sectionTextView"
         android:layout_width="130dp"
         android:layout_height="40dp"
         android:layout_marginLeft="10dp"
@@ -17,7 +17,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/buttonLogin"
+        android:id="@+id/loginButton"
         android:layout_width="80dp"
         android:layout_height="40dp"
         android:layout_marginTop="10dp"
@@ -58,6 +58,137 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/containerGenderBar" />
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="105dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        app:layout_constraintBottom_toTopOf="@id/bottomDivider"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/containerCategoryBar">
+
+        <TextView
+            android:layout_width="60dp"
+            android:layout_height="20dp"
+            android:text="FILTRI"/>
+
+
+    </ScrollView>
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        app:layout_constraintBottom_toTopOf="@id/bottomDivider"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/scrollView"
+        app:layout_constraintTop_toBottomOf="@id/containerCategoryBar">
+
+        <TableLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical">
+
+            <TableRow>
+
+                <include
+                    android:id="@+id/containerImageLeft1"
+                    layout="@layout/image_layout"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="5dp" />
+
+                <include
+                    android:id="@+id/containerImageRight1"
+                    layout="@layout/image_layout"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_marginTop="10dp" />
+
+            </TableRow>
+
+            <TableRow>
+
+                <include
+                    android:id="@+id/containerImageLeft2"
+                    layout="@layout/image_layout"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="5dp" />
+
+                <include
+                    android:id="@+id/containerImageRight2"
+                    layout="@layout/image_layout"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_marginTop="10dp" />
+
+            </TableRow>
+
+            <TableRow>
+
+                <include
+                    android:id="@+id/containerImageLeft3"
+                    layout="@layout/image_layout"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="5dp" />
+
+                <include
+                    android:id="@+id/containerImageRight3"
+                    layout="@layout/image_layout"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_marginTop="10dp" />
+
+            </TableRow>
+
+            <TableRow>
+
+                <include
+                    android:id="@+id/containerImageLeft4"
+                    layout="@layout/image_layout"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="5dp" />
+
+                <include
+                    android:id="@+id/containerImageRight4"
+                    layout="@layout/image_layout"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_marginTop="10dp" />
+
+            </TableRow>
+
+            <TableRow>
+
+                <include
+                    android:id="@+id/containerImageLeft5"
+                    layout="@layout/image_layout"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="5dp" />
+
+                <include
+                    android:id="@+id/containerImageRight5"
+                    layout="@layout/image_layout"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_marginTop="10dp" />
+
+            </TableRow>
+
+        </TableLayout>
+    </ScrollView>
 
     <View
         android:id="@+id/bottomDivider"

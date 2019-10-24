@@ -115,7 +115,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <include
-        android:id="@+id/container_header_lyt"
+        android:id="@+id/containerBottomBar"
         layout="@layout/bottom_bar"
         android:layout_width="410dp"
         android:layout_height="50dp"

@@ -15,13 +15,13 @@ public class Catalog extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.catalog);
-
-        TextView abbigliamento = findViewById(R.id.clothingTextView);
+        
         Button loginButton = findViewById(R.id.buttonLogin);
         ImageButton homeButton = findViewById(R.id.imageButton5);
         ImageButton search = findViewById(R.id.imageButton7);
         ImageButton shoppingCart = findViewById(R.id.imageButton8);
         ImageButton menu = findViewById(R.id.imageButton9);
+        TextView clothing = findViewById(R.id.clothingTextView);
 
         loginButton.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -72,17 +72,18 @@ public class Catalog extends AppCompatActivity {
             }
 
         });*/
-        abbigliamento.setOnClickListener(new View.OnClickListener(){
+        
+        clothing.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                System.out.println("hai premuto su abbigliamento");
+                System.out.println("hai premuto su clothing");
             }
 
         });
 
         TextView calzature = findViewById(R.id.footwearTextView);
 
-        abbigliamento.setOnClickListener(new View.OnClickListener(){
+        clothing.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
                 System.out.println("hai premuto su calzature");
@@ -92,7 +93,7 @@ public class Catalog extends AppCompatActivity {
 
         TextView accessori = findViewById(R.id.accessoriesTextView);
 
-        abbigliamento.setOnClickListener(new View.OnClickListener(){
+        clothing.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
                 System.out.println("hai premuto su accessori");

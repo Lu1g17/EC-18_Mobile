@@ -61,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(shoppingCart);
             }
 
-        });
+        });*/
 
         menu.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -71,6 +71,6 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(menu);
             }
 
-        });*/
+        });
     }
 }

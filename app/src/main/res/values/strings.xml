@@ -7,4 +7,25 @@
         <item>Donna</item>
     </string-array>
 
+    <string-array name="MenuUomo">
+        <item>Uomo</item>
+        <item>Abbigliamento</item>
+        <item>Calzature</item>
+        <item>Accessori</item>
+    </string-array>
+
+    <string-array name="MenuDonna">
+        <item>Donna</item>
+        <item>Abbigliamento</item>
+        <item>Calzature</item>
+        <item>Accessori</item>
+    </string-array>
+
+    <string-array name="MenuBambino">
+        <item>Bambino</item>
+        <item>Abbigliamento</item>
+        <item>Calzature</item>
+        <item>Accessori</item>
+    </string-array>
+
 </resources>

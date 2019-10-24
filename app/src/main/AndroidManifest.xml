@@ -40,6 +40,8 @@
 
         <activity android:name=".OrderDetails"/>
 
+        <activity android:name=".Menu"/>
+
     </application>
 
 </manifest>

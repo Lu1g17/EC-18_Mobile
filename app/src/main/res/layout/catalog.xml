@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/sectionTextView"
+        android:id="@+id/SectionTextViewCatalog"
         android:layout_width="130dp"
         android:layout_height="40dp"
-        android:layout_marginLeft="10dp"
+        android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
         android:text="Catalogo"
         android:textSize="30sp"
@@ -17,7 +16,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/loginButton"
+        android:id="@+id/LoginButtonCatalog"
         android:layout_width="80dp"
         android:layout_height="40dp"
         android:layout_marginTop="10dp"
@@ -28,161 +27,155 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <View
-        android:id="@+id/topDivider"
+        android:id="@+id/TopDividerCatalog"
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_marginTop="50dp"
         android:background="@android:color/darker_gray"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="0dp" />
-
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <include
-        android:id="@+id/containerGenderBar"
+        android:id="@+id/GenderBarContainerCatalog"
         layout="@layout/gender_bar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
         android:layout_marginBottom="5dp"
-        app:layout_constraintBottom_toTopOf="@+id/containerCategoryBar"
+        app:layout_constraintBottom_toTopOf="@+id/CategoryBarContainerCatalog"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/topDivider" />
+        app:layout_constraintTop_toBottomOf="@id/TopDividerCatalog" />
 
     <include
-        android:id="@+id/containerCategoryBar"
+        android:id="@+id/CategoryBarContainerCatalog"
         layout="@layout/category_bar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/containerGenderBar" />
+        app:layout_constraintTop_toBottomOf="@+id/GenderBarContainerCatalog" />
 
     <ScrollView
-        android:id="@+id/scrollView"
+        android:id="@+id/FilterScrollViewCatalog"
         android:layout_width="105dp"
         android:layout_height="0dp"
         android:layout_marginTop="5dp"
         android:layout_marginBottom="5dp"
-        app:layout_constraintBottom_toTopOf="@id/bottomDivider"
+        app:layout_constraintBottom_toTopOf="@id/BottomDividerCatalog"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/containerCategoryBar">
-
-        <TextView
-            android:layout_width="60dp"
-            android:layout_height="20dp"
-            android:text="FILTRI"/>
-
-
-    </ScrollView>
+        app:layout_constraintTop_toBottomOf="@id/CategoryBarContainerCatalog"/>
 
     <ScrollView
+        android:id="@+id/ImageScrollViewCatalog"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginTop="5dp"
         android:layout_marginBottom="5dp"
-        app:layout_constraintBottom_toTopOf="@id/bottomDivider"
+        app:layout_constraintBottom_toTopOf="@id/BottomDividerCatalog"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/scrollView"
-        app:layout_constraintTop_toBottomOf="@id/containerCategoryBar">
+        app:layout_constraintStart_toEndOf="@+id/FilterScrollViewCatalog"
+        app:layout_constraintTop_toBottomOf="@id/CategoryBarContainerCatalog">
 
         <TableLayout
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
+            android:id="@+id/TableLayoutCatalog"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <TableRow>
+            <TableRow android:id="@+id/TableRowCatalog1">
 
                 <include
-                    android:id="@+id/containerImageLeft1"
+                    android:id="@+id/LeftImageContainerCatalog1"
                     layout="@layout/image_layout"
                     android:layout_width="150dp"
-                    android:layout_height="150dp"
+                    android:layout_height="180dp"
                     android:layout_marginTop="10dp"
-                    android:layout_marginRight="5dp" />
+                    android:layout_marginEnd="5dp" />
 
                 <include
-                    android:id="@+id/containerImageRight1"
+                    android:id="@+id/RightImageContainerCatalog1"
                     layout="@layout/image_layout"
                     android:layout_width="150dp"
-                    android:layout_height="150dp"
+                    android:layout_height="180dp"
                     android:layout_marginTop="10dp" />
 
             </TableRow>
 
-            <TableRow>
+            <TableRow android:id="@+id/TableRowCatalog2">
 
                 <include
-                    android:id="@+id/containerImageLeft2"
+                    android:id="@+id/LeftImageContainerCatalog2"
                     layout="@layout/image_layout"
                     android:layout_width="150dp"
-                    android:layout_height="150dp"
+                    android:layout_height="180dp"
                     android:layout_marginTop="10dp"
-                    android:layout_marginRight="5dp" />
+                    android:layout_marginEnd="5dp" />
 
                 <include
-                    android:id="@+id/containerImageRight2"
+                    android:id="@+id/RightImageContainerCatalog2"
                     layout="@layout/image_layout"
                     android:layout_width="150dp"
-                    android:layout_height="150dp"
+                    android:layout_height="180dp"
                     android:layout_marginTop="10dp" />
 
             </TableRow>
 
-            <TableRow>
+            <TableRow android:id="@+id/TableRowCatalog3">
 
                 <include
-                    android:id="@+id/containerImageLeft3"
+                    android:id="@+id/LeftImageContainerCatalog3"
                     layout="@layout/image_layout"
                     android:layout_width="150dp"
-                    android:layout_height="150dp"
+                    android:layout_height="180dp"
                     android:layout_marginTop="10dp"
-                    android:layout_marginRight="5dp" />
+                    android:layout_marginEnd="5dp" />
 
                 <include
-                    android:id="@+id/containerImageRight3"
+                    android:id="@+id/RightImageContainerCatalog3"
                     layout="@layout/image_layout"
                     android:layout_width="150dp"
-                    android:layout_height="150dp"
+                    android:layout_height="180dp"
                     android:layout_marginTop="10dp" />
 
             </TableRow>
 
-            <TableRow>
+            <TableRow android:id="@+id/TableRowCatalog4">
 
                 <include
-                    android:id="@+id/containerImageLeft4"
+                    android:id="@+id/LeftImageContainerCatalog4"
                     layout="@layout/image_layout"
                     android:layout_width="150dp"
-                    android:layout_height="150dp"
+                    android:layout_height="180dp"
                     android:layout_marginTop="10dp"
-                    android:layout_marginRight="5dp" />
+                    android:layout_marginEnd="5dp" />
 
                 <include
-                    android:id="@+id/containerImageRight4"
+                    android:id="@+id/RightImageContainerCatalog4"
                     layout="@layout/image_layout"
                     android:layout_width="150dp"
-                    android:layout_height="150dp"
+                    android:layout_height="180dp"
                     android:layout_marginTop="10dp" />
 
             </TableRow>
 
-            <TableRow>
+            <TableRow android:id="@+id/TableRowCatalog5">
 
                 <include
-                    android:id="@+id/containerImageLeft5"
+                    android:id="@+id/LeftImageContainerCatalog5"
                     layout="@layout/image_layout"
                     android:layout_width="150dp"
-                    android:layout_height="150dp"
+                    android:layout_height="180dp"
                     android:layout_marginTop="10dp"
-                    android:layout_marginRight="5dp" />
+                    android:layout_marginEnd="5dp" />
 
                 <include
-                    android:id="@+id/containerImageRight5"
+                    android:id="@+id/RightImageContainerCatalog5"
                     layout="@layout/image_layout"
                     android:layout_width="150dp"
-                    android:layout_height="150dp"
+                    android:layout_height="180dp"
                     android:layout_marginTop="10dp" />
 
             </TableRow>
@@ -191,7 +184,7 @@
     </ScrollView>
 
     <View
-        android:id="@+id/bottomDivider"
+        android:id="@+id/BottomDividerCatalog"
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_marginBottom="50dp"
@@ -201,11 +194,11 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <include
-        android:id="@+id/containerBottomBar"
+        android:id="@+id/BottomBarContainerCatalog"
         layout="@layout/bottom_bar"
         android:layout_width="410dp"
         android:layout_height="50dp"
-        app:layout_constraintBottom_toTopOf="@id/bottomDivider"
+        app:layout_constraintBottom_toTopOf="@id/BottomDividerCatalog"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="parent"

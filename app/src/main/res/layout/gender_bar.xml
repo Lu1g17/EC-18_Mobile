@@ -17,7 +17,7 @@
         android:text="Uomo"
         app:layout_constraintEnd_toStartOf="@+id/womanButton"
         app:layout_constraintStart_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@id/topDivider" />
+        app:layout_constraintTop_toTopOf="@id/TopDividerCatalog" />
 
     <Button
         android:id="@+id/womanButton"
@@ -29,7 +29,7 @@
         android:text="Donna"
         app:layout_constraintEnd_toStartOf="@+id/kidButton"
         app:layout_constraintStart_toEndOf="@id/manButton"
-        app:layout_constraintTop_toTopOf="@id/topDivider" />
+        app:layout_constraintTop_toTopOf="@id/TopDividerCatalog" />
 
     <Button
         android:id="@+id/kidButton"
@@ -41,6 +41,6 @@
         android:text="Bambino"
         app:layout_constraintEnd_toStartOf="parent"
         app:layout_constraintStart_toEndOf="@+id/womanButton"
-        app:layout_constraintTop_toTopOf="@id/topDivider" />
+        app:layout_constraintTop_toTopOf="@id/TopDividerCatalog" />
 
 </LinearLayout>

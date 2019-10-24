@@ -7,7 +7,7 @@
     android:layout_height="match_parent">
 
     <Button
-        android:id="@+id/loginButton"
+        android:id="@+id/LoginButtonCatalog"
         android:layout_width="80dp"
         android:layout_height="40dp"
         android:layout_marginTop="10dp"
@@ -18,7 +18,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/sectionTextView"
+        android:id="@+id/SectionTextViewCatalog"
         android:layout_width="130dp"
         android:layout_height="40dp"
         android:layout_marginLeft="10dp"
@@ -29,7 +29,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <View
-        android:id="@+id/topDivider"
+        android:id="@+id/TopDividerCatalog"
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_marginTop="50dp"
@@ -38,24 +38,24 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
+    <EditText
         android:id="@+id/searchTextView"
         android:layout_width="360dp"
-        android:layout_height="30dp"
+        android:layout_height="40dp"
         android:layout_marginTop="5dp"
         android:text="Ricerca"
         android:textColor="@android:color/black"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/topDivider" />
+        app:layout_constraintTop_toBottomOf="@id/TopDividerCatalog" />
 
     <ScrollView
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginTop="5dp"
         android:layout_marginBottom="5dp"
-        app:layout_constraintBottom_toTopOf="@+id/bottomDivider"
+        app:layout_constraintBottom_toTopOf="@+id/BottomDividerCatalog"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/searchTextView">
@@ -167,7 +167,7 @@
     </ScrollView>
 
     <View
-        android:id="@+id/bottomDivider"
+        android:id="@+id/BottomDividerCatalog"
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_marginBottom="50dp"
@@ -177,11 +177,11 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <include
-        android:id="@+id/containerBottomBar"
+        android:id="@+id/BottomBarContainerCatalog"
         layout="@layout/bottom_bar"
         android:layout_width="410dp"
         android:layout_height="50dp"
-        app:layout_constraintBottom_toTopOf="@id/bottomDivider"
+        app:layout_constraintBottom_toTopOf="@id/BottomDividerCatalog"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="parent"

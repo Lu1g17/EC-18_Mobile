@@ -7,7 +7,7 @@
     tools:context=".MainActivity">
 
     <TextView
-        android:id="@+id/textView32"
+        android:id="@+id/SectionTextViewHome"
         android:layout_width="80dp"
         android:layout_height="40dp"
         android:layout_marginLeft="10dp"
@@ -18,7 +18,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/buttonLogin"
+        android:id="@+id/LoginButtonHome"
         android:layout_width="80dp"
         android:layout_height="40dp"
         android:layout_marginTop="10dp"
@@ -29,7 +29,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <View
-        android:id="@+id/topDivider"
+        android:id="@+id/TopDividerCatalog"
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_marginTop="50dp"
@@ -45,14 +45,14 @@
         android:text="In Primo Piano"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/topDivider" />
+        app:layout_constraintTop_toBottomOf="@id/TopDividerCatalog" />
 
     <ScrollView
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginTop="5dp"
         android:layout_marginBottom="5dp"
-        app:layout_constraintBottom_toTopOf="@id/bottomDivider"
+        app:layout_constraintBottom_toTopOf="@id/BottomDividerCatalog"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2">
@@ -105,7 +105,7 @@
     </ScrollView>
 
     <View
-        android:id="@+id/bottomDivider"
+        android:id="@+id/BottomDividerCatalog"
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_marginBottom="50dp"
@@ -115,11 +115,11 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <include
-        android:id="@+id/containerBottomBar"
+        android:id="@+id/BottomBarContainerCatalog"
         layout="@layout/bottom_bar"
         android:layout_width="410dp"
         android:layout_height="50dp"
-        app:layout_constraintBottom_toTopOf="@id/bottomDivider"
+        app:layout_constraintBottom_toTopOf="@id/BottomDividerCatalog"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="parent"

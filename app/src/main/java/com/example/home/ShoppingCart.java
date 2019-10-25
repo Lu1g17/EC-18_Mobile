@@ -5,28 +5,26 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
-import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class Menu extends AppCompatActivity {
+public class ShoppingCart extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.menu);
+        setContentView(R.layout.shopping_cart);
 
         Button loginButton = findViewById(R.id.LoginButton);
         ImageButton homeButton = findViewById(R.id.imageButtonHome);
         ImageButton catalog = findViewById(R.id.imageButtonCatalog);
         ImageButton search = findViewById(R.id.imageButtonSearch);
-        ImageButton shoppingCart = findViewById(R.id.imageButtonShoppingCart);
-        TextView profile = findViewById(R.id.ProfileTextViewMenu);
+        ImageButton menu = findViewById(R.id.imageButtonMenu);
 
         loginButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                Intent login = new Intent(Menu.this, Login.class);
+                Intent login = new Intent(ShoppingCart.this, Login.class);
 
                 startActivity(login);
             }
@@ -36,7 +34,7 @@ public class Menu extends AppCompatActivity {
         homeButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                Intent mainActivity = new Intent(Menu.this, MainActivity.class);
+                Intent mainActivity = new Intent(ShoppingCart.this, MainActivity.class);
 
                 startActivity(mainActivity);
             }
@@ -46,7 +44,7 @@ public class Menu extends AppCompatActivity {
         catalog.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                Intent catalog = new Intent(Menu.this, Catalog.class);
+                Intent catalog = new Intent(ShoppingCart.this, Catalog.class);
 
                 startActivity(catalog);
             }
@@ -56,31 +54,22 @@ public class Menu extends AppCompatActivity {
         search.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                Intent search = new Intent(Menu.this, Search.class);
+                Intent search = new Intent(ShoppingCart.this, Search.class);
 
                 startActivity(search);
             }
 
         });
 
-        shoppingCart.setOnClickListener(new View.OnClickListener(){
+        menu.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                Intent shoppingCart = new Intent(Menu.this, ShoppingCart.class);
+                Intent menu = new Intent(ShoppingCart.this, Menu.class);
 
-                startActivity(shoppingCart);
+                startActivity(menu);
             }
 
         });
-        
-        profile.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v) {
-                Intent profile = new Intent(Menu.this, Profile.class);
-
-                startActivity(profile);
-            }
-        });
-
     }
+
 }

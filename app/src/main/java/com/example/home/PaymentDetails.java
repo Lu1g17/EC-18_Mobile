@@ -9,7 +9,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-class PaymentDetails extends AppCompatActivity {
+public class PaymentDetails extends AppCompatActivity {
 
     TextView txtId,txtAmount,txtStatus;
 

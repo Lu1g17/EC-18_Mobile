@@ -45,6 +45,10 @@
         <activity android:name=".Menu"/>
         
         <activity android:name=".ShoppingCart"/>
+        
+        <activity android:name=".PaymentDetails"/>
+
+        <activity android:name=".Paypal"/>
 
     </application>
 

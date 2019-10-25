@@ -9,14 +9,14 @@ import android.os.Bundle;
 import android.widget.ImageButton;
 
 public class MainActivity extends AppCompatActivity {
-    static boolean autenticato = false;
+    //static boolean autenticato = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Button loginButton = findViewById(R.id.LoginButtonHome);
+        Button loginButton = findViewById(R.id.LoginButton);
         ImageButton catalog = findViewById(R.id.imageButtonCatalog);
         ImageButton search = findViewById(R.id.imageButtonSearch);
         ImageButton shoppingCart = findViewById(R.id.imageButtonShoppingCart);
@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
 
         });
 
-        /*shoppingCart.setOnClickListener(new View.OnClickListener(){
+        shoppingCart.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
                 Intent shoppingCart = new Intent(MainActivity.this, ShoppingCart.class);
@@ -60,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(shoppingCart);
             }
 
-        });*/
+        });
 
         menu.setOnClickListener(new View.OnClickListener(){
             @Override

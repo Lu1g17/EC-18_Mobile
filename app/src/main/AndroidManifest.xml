@@ -43,6 +43,8 @@
         <activity android:name=".OrderDetails"/>
 
         <activity android:name=".Menu"/>
+        
+        <activity android:name=".ShoppingCart"/>
 
     </application>
 

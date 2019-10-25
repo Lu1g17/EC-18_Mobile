@@ -17,7 +17,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/SectionTextView"
+        android:id="@+id/SectionTextViewSearch"
         android:layout_width="130dp"
         android:layout_height="40dp"
         android:layout_marginStart="10dp"
@@ -42,14 +42,17 @@
         android:layout_width="360dp"
         android:layout_height="40dp"
         android:layout_marginTop="5dp"
+        android:autofillHints=""
         android:inputType="text"
         android:text="Ricerca"
+        android:textAlignment="center"
+        android:textAllCaps="false"
         android:textColor="@android:color/black"
         android:textSize="18sp"
+        android:textStyle="normal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/TopDivider"
-        android:autofillHints="" />
+        app:layout_constraintTop_toBottomOf="@id/TopDivider" />
 
     <ScrollView
         android:id="@+id/ScrollViewSearch"
@@ -71,7 +74,7 @@
             <TableRow android:id="@+id/TableRowSearch">
 
                 <include
-                    android:id="@+id/LeftImageContainer1"
+                    android:id="@+id/LeftImageContainerSearch1"
                     layout="@layout/image_layout"
                     android:layout_width="200dp"
                     android:layout_height="200dp"
@@ -79,7 +82,7 @@
                     android:layout_marginEnd="5dp" />
 
                 <include
-                    android:id="@+id/RightImageContainer1"
+                    android:id="@+id/RightImageContainerSearch1"
                     layout="@layout/image_layout"
                     android:layout_width="200dp"
                     android:layout_height="200dp"
@@ -91,7 +94,7 @@
             <TableRow android:id="@+id/TableRowSearch2">
 
                 <include
-                    android:id="@+id/LeftImageContainer2"
+                    android:id="@+id/LeftImageContainerSearch2"
                     layout="@layout/image_layout"
                     android:layout_width="200dp"
                     android:layout_height="200dp"
@@ -99,7 +102,7 @@
                     android:layout_marginEnd="5dp" />
 
                 <include
-                    android:id="@+id/RightImageContainer2"
+                    android:id="@+id/RightImageContainerSearch2"
                     layout="@layout/image_layout"
                     android:layout_width="200dp"
                     android:layout_height="200dp"
@@ -111,7 +114,7 @@
             <TableRow android:id="@+id/TableRowSearch3">
 
                 <include
-                    android:id="@+id/LeftImageContainer3"
+                    android:id="@+id/LeftImageContainerSearch3"
                     layout="@layout/image_layout"
                     android:layout_width="200dp"
                     android:layout_height="200dp"
@@ -119,7 +122,7 @@
                     android:layout_marginEnd="5dp" />
 
                 <include
-                    android:id="@+id/RightImageContainer3"
+                    android:id="@+id/RightImageContainerSearch3"
                     layout="@layout/image_layout"
                     android:layout_width="200dp"
                     android:layout_height="200dp"
@@ -131,7 +134,7 @@
             <TableRow android:id="@+id/TableRowSearch4">
 
                 <include
-                    android:id="@+id/LeftImageContainer4"
+                    android:id="@+id/LeftImageContainerSearch4"
                     layout="@layout/image_layout"
                     android:layout_width="200dp"
                     android:layout_height="200dp"
@@ -139,7 +142,7 @@
                     android:layout_marginEnd="5dp" />
 
                 <include
-                    android:id="@+id/RightImageContainer4"
+                    android:id="@+id/RightImageContainerSearch4"
                     layout="@layout/image_layout"
                     android:layout_width="200dp"
                     android:layout_height="200dp" />
@@ -149,7 +152,7 @@
             <TableRow android:id="@+id/TableRowSearch5">
 
                 <include
-                    android:id="@+id/LeftImageContainer5"
+                    android:id="@+id/LeftImageContainerSearch5"
                     layout="@layout/image_layout"
                     android:layout_width="200dp"
                     android:layout_height="200dp"
@@ -157,7 +160,7 @@
                     android:layout_marginEnd="5dp" />
 
                 <include
-                    android:id="@+id/RightImageContainer5"
+                    android:id="@+id/RightImageContainerSearch5"
                     layout="@layout/image_layout"
                     android:layout_width="200dp"
                     android:layout_height="200dp"
@@ -180,7 +183,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <include
-        android:id="@+id/BottomBarContainer"
+        android:id="@+id/BottomBarContainerSearch"
         layout="@layout/bottom_bar"
         android:layout_width="410dp"
         android:layout_height="50dp"

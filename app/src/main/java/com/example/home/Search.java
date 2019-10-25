@@ -57,7 +57,7 @@ public class Search extends AppCompatActivity {
 
         });
 
-        /*shoppingCart.setOnClickListener(new View.OnClickListener(){
+        shoppingCart.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
                 Intent shoppingCart = new Intent(Search.this, ShoppingCart.class);
@@ -65,7 +65,7 @@ public class Search extends AppCompatActivity {
                 startActivity(shoppingCart);
             }
 
-        });*/
+        });
 
         menu.setOnClickListener(new View.OnClickListener(){
             @Override

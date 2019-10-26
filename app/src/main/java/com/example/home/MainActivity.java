@@ -81,7 +81,10 @@ public class MainActivity extends AppCompatActivity {
 
         });
 
-        //initConnectionDatabase();
+        initConnectionDatabase();
+
+        DynamoDBMapperCRUDExample elemento = new DynamoDBMapperCRUDExample();
+        elemento.aggiungi();
     }
 
     public void initConnectionDatabase(){

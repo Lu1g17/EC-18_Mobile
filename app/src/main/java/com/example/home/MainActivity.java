@@ -11,14 +11,13 @@ import android.widget.ImageButton;
 import com.amazonaws.auth.AWSCredentialsProvider;
 import com.amazonaws.mobile.client.AWSMobileClient;
 import com.amazonaws.mobile.config.AWSConfiguration;
+
 import com.amazonaws.mobileconnectors.dynamodbv2.dynamodbmapper.DynamoDBMapper;
 import com.amazonaws.services.dynamodbv2.AmazonDynamoDBClient;
 
-import com.amazonaws.mobileconnectors.dynamodbv2.dynamodbmapper.DynamoDBMapper;
-
 public class MainActivity extends AppCompatActivity {
     //static boolean autenticato = false;
-    DynamoDBMapper dynamoDBMapper;
+    public static DynamoDBMapper dynamoDBMapper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -84,6 +83,7 @@ public class MainActivity extends AppCompatActivity {
         initConnectionDatabase();
 
         DynamoDBMapperCRUDExample elemento = new DynamoDBMapperCRUDExample();
+
         elemento.aggiungi();
     }
 

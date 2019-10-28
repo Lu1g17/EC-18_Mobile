@@ -13,7 +13,7 @@ public class RegistrationPassword extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.registration_password);
 
-        ImageButton Bregistration2= (ImageButton) findViewById(R.id.imageButtonAvanti2);
+        ImageButton Bregistration2= (ImageButton) findViewById(R.id.GoImageButtonRegistrationPassword);
 
         Bregistration2.setOnClickListener(new View.OnClickListener(){
             @Override

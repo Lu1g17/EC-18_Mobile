@@ -10,8 +10,8 @@ public class AdminEntity {
     private String email, password;
 
     public AdminEntity() {
-        setEmail(email);
-        setPassword(password);
+        //setEmail(email);
+        //setPassword(password);
     }
 
 

@@ -12,7 +12,7 @@ public class Registration extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.registration);
 
-        ImageButton Bregistration3= (ImageButton) findViewById(R.id.imageButtonAvanti3);
+        ImageButton Bregistration3= (ImageButton) findViewById(R.id.GoImageButtonRegistration);
 
         Bregistration3.setOnClickListener(new View.OnClickListener(){
             @Override

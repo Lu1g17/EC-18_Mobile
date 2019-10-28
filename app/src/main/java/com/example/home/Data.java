@@ -46,7 +46,7 @@ public class Data extends AppCompatActivity {
         intent.putExtra(PayPalService.EXTRA_PAYPAL_CONFIGURATION, config);
         startService(intent);
 
-        Button01 = (ImageView) findViewById(R.id.imageViewpaypal);
+        Button01 = (ImageView) findViewById(R.id.PaypalImageViewData);
         Button01.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 payment();

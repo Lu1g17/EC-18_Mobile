@@ -83,16 +83,6 @@
             android:layout_marginBottom="10dp" />
 
         <TextView
-            android:id="@+id/SettingsTextViewMenu"
-            android:layout_width="160dp"
-            android:layout_height="30dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
-            android:text="Impostazioni"
-            android:textAlignment="center"
-            android:textSize="18sp" />
-
-        <TextView
             android:id="@+id/ProfileTextViewMenu"
             android:layout_width="160dp"
             android:layout_height="30dp"

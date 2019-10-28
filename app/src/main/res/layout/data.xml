@@ -68,68 +68,122 @@
                 android:id="@+id/ShippingTextViewData"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="5dp"
                 android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="5dp"
                 android:text="Spedizione"
                 android:textSize="30sp" />
 
-            <EditText
+            <TextView
                 android:id="@+id/ShippingNationTextViewData"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="40dp"
                 android:layout_marginBottom="5dp"
-                android:text="Nazione"
+                android:text="Nazione:"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/ShippingNationEditTextData"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="60dp"
+                android:layout_marginBottom="5dp"
+                android:text=""
                 android:textSize="20sp"
                 android:textStyle="italic" />
 
-            <EditText
+            <TextView
                 android:id="@+id/ShippingRegionTextViewData"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="40dp"
                 android:layout_marginBottom="5dp"
-                android:text="Regione"
+                android:text="Regione:"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/ShippingRegionEditTextData"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="60dp"
+                android:layout_marginBottom="5dp"
+                android:text=""
                 android:textSize="20sp"
                 android:textStyle="italic" />
 
-            <EditText
+            <TextView
                 android:id="@+id/ShippingProvinceTextViewData"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="40dp"
                 android:layout_marginBottom="5dp"
-                android:text="Province"
+                android:text="Provincia:"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/ShippingProvinceEditTextData"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="60dp"
+                android:layout_marginBottom="5dp"
+                android:text=""
                 android:textSize="20sp"
                 android:textStyle="italic" />
 
-            <EditText
+            <TextView
                 android:id="@+id/ShippingCityTextViewData"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="40dp"
                 android:layout_marginBottom="5dp"
                 android:text="Città"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/ShippingCityEditTextData"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="60dp"
+                android:layout_marginBottom="5dp"
+                android:text=""
                 android:textSize="20sp"
                 android:textStyle="italic" />
 
-            <EditText
+            <TextView
                 android:id="@+id/ShippingAddressTextViewData"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="40dp"
                 android:layout_marginBottom="5dp"
-                android:text="Indirizzzo"
+                android:text="Indirizzo:"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/ShippingAddressEditTextData"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="60dp"
+                android:layout_marginBottom="5dp"
+                android:text=""
                 android:textSize="20sp"
                 android:textStyle="italic" />
 
-            <EditText
+            <TextView
                 android:id="@+id/ShippingCAPTextViewData"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="40dp"
                 android:layout_marginBottom="5dp"
-                android:text="CAP"
+                android:text="CAP:"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/ShippingCAPEditTextData"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="60dp"
+                android:layout_marginBottom="5dp"
+                android:text=""
                 android:textSize="20sp"
                 android:textStyle="italic" />
 
@@ -137,69 +191,122 @@
                 android:id="@+id/BillingTextViewData"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:layout_marginBottom="5dp"
                 android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="5dp"
                 android:text="Fatturazione"
                 android:textSize="30sp" />
 
-            <EditText
+            <TextView
                 android:id="@+id/BillingNationTextViewData"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="40dp"
                 android:layout_marginBottom="5dp"
-                android:text="Nazione"
+                android:text="Nazione:"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/BillingNationEditTextData"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="60dp"
+                android:layout_marginBottom="5dp"
+                android:text=""
                 android:textSize="20sp"
                 android:textStyle="italic" />
 
-            <EditText
+            <TextView
                 android:id="@+id/BillingRegionTextViewData"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="40dp"
                 android:layout_marginBottom="5dp"
-                android:text="Regione"
+                android:text="Regione:"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/BillingRegionEditTextData"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="60dp"
+                android:layout_marginBottom="5dp"
+                android:text=""
                 android:textSize="20sp"
                 android:textStyle="italic" />
 
-            <EditText
+            <TextView
                 android:id="@+id/BillingProvinceTextViewData"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="40dp"
                 android:layout_marginBottom="5dp"
-                android:text="Province"
+                android:text="Provincia:"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/BillingProvinceEditTextData"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="60dp"
+                android:layout_marginBottom="5dp"
+                android:text=""
                 android:textSize="20sp"
                 android:textStyle="italic" />
 
-            <EditText
+            <TextView
                 android:id="@+id/BillingCityTextViewData"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="40dp"
                 android:layout_marginBottom="5dp"
                 android:text="Città"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/BillingCityEditTextData"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="60dp"
+                android:layout_marginBottom="5dp"
+                android:text=""
                 android:textSize="20sp"
                 android:textStyle="italic" />
 
-            <EditText
+            <TextView
                 android:id="@+id/BillingAddressTextViewData"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="40dp"
                 android:layout_marginBottom="5dp"
-                android:text="Indirizzzo"
+                android:text="Indirizzo:"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/BillingAddressEditTextData"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="60dp"
+                android:layout_marginBottom="5dp"
+                android:text=""
                 android:textSize="20sp"
                 android:textStyle="italic" />
 
-            <EditText
+            <TextView
                 android:id="@+id/BillingCAPTextViewData"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="40dp"
                 android:layout_marginBottom="5dp"
-                android:text="CAP"
+                android:text="CAP:"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/BillingCAPEditTextData"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="60dp"
+                android:layout_marginBottom="5dp"
+                android:text=""
                 android:textSize="20sp"
                 android:textStyle="italic" />
 

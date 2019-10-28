@@ -1,4 +1,4 @@
-package com.example.home;
+package com.example.home.Boundary;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -15,6 +15,7 @@ import com.amazonaws.mobile.config.AWSConfiguration;
 import com.amazonaws.mobileconnectors.dynamodbv2.dynamodbmapper.DynamoDBMapper;
 import com.amazonaws.services.dynamodbv2.AmazonDynamoDBClient;
 import com.example.home.Control.Connection;
+import com.example.home.R;
 
 public class MainActivity extends AppCompatActivity {
     //static boolean autenticato = false;

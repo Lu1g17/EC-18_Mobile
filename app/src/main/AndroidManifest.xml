@@ -15,7 +15,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <activity android:name=".MainActivity">
+        <activity android:name=".Boundary.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -23,35 +23,35 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".Article"/>
+        <activity android:name=".Boundary.Article"/>
 
-        <activity android:name=".Login"/>
+        <activity android:name=".Boundary.Login"/>
 
-        <activity android:name=".RegistrationEmail"/>
+        <activity android:name=".Boundary.RegistrationEmail"/>
 
-        <activity android:name=".RegistrationPassword"/>
+        <activity android:name=".Boundary.RegistrationPassword"/>
 
-        <activity android:name=".Registration"/>
+        <activity android:name=".Boundary.Registration"/>
 
-        <activity android:name=".Search"/>
+        <activity android:name=".Boundary.Search"/>
 
-        <activity android:name=".Profile"/>
+        <activity android:name=".Boundary.Profile"/>
 
-        <activity android:name=".ProfileUpdate"/>
+        <activity android:name=".Boundary.ProfileUpdate"/>
 
-        <activity android:name=".Catalog"/>
+        <activity android:name=".Boundary.Catalog"/>
 
-        <activity android:name=".Data"/>
+        <activity android:name=".Boundary.Data"/>
 
-        <activity android:name=".OrderDetails"/>
+        <activity android:name=".Boundary.OrderDetails"/>
 
-        <activity android:name=".Menu"/>
+        <activity android:name=".Boundary.Menu"/>
         
-        <activity android:name=".ShoppingCart"/>
+        <activity android:name=".Boundary.ShoppingCart"/>
         
-        <activity android:name=".PaymentDetails"/>
+        <activity android:name=".Boundary.PaymentDetails"/>
 
-        <activity android:name=".Paypal"/>
+        <activity android:name=".Boundary.Paypal"/>
 
     </application>
 

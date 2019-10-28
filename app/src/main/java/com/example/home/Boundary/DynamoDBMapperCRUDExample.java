@@ -1,9 +1,9 @@
-package com.example.home;
+package com.example.home.Boundary;
 
 import com.amazonaws.mobileconnectors.dynamodbv2.dynamodbmapper.DynamoDBAttribute;
 import com.amazonaws.mobileconnectors.dynamodbv2.dynamodbmapper.DynamoDBHashKey;
 import com.amazonaws.mobileconnectors.dynamodbv2.dynamodbmapper.DynamoDBTable;
-import static com.example.home.MainActivity.dynamoDBMapper;
+import static com.example.home.Boundary.MainActivity.dynamoDBMapper;
 
 public class DynamoDBMapperCRUDExample{
 

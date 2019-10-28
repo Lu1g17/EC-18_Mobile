@@ -1,11 +1,6 @@
 package com.example.home.Control;
 
-import com.amazonaws.auth.AWSCredentialsProvider;
-import com.amazonaws.mobile.client.AWSMobileClient;
-import com.amazonaws.mobile.config.AWSConfiguration;
-import com.amazonaws.mobileconnectors.dynamodbv2.dynamodbmapper.DynamoDBMapper;
-import com.amazonaws.services.dynamodbv2.AmazonDynamoDBClient;
-import com.example.home.MainActivity;
+import com.example.home.Boundary.MainActivity;
 
 public class Connection extends MainActivity {
     /*public void initConnectionDatabase(){

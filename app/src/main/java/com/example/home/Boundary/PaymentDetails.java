@@ -1,10 +1,12 @@
-package com.example.home;
+package com.example.home.Boundary;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.home.R;
 
 import org.json.JSONException;
 import org.json.JSONObject;

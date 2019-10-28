@@ -120,7 +120,7 @@
     <include
         android:id="@+id/BottomBarContainerHome"
         layout="@layout/bottom_bar"
-        android:layout_width="410dp"
+        android:layout_width="0dp"
         android:layout_height="50dp"
         app:layout_constraintBottom_toTopOf="@id/BottomDividerHome"
         app:layout_constraintEnd_toEndOf="parent"

@@ -75,143 +75,145 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <CheckBox android:id="@+id/checkbox_meat"
+            <TextView
+                android:id="@+id/CategoryTextViewCatalog"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="wewe"
-                android:onClick="onCheckboxClicked"/>
+                android:layout_marginBottom="5dp"
+                android:text="Categoria"
+                android:textSize="18sp" />
 
-            <CheckBox android:id="@+id/checkbox_cheese"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="wow"
-                android:onClick="onCheckboxClicked"/>
-
-            <RadioButton
-                android:id="@+id/SwimSuitRadioButtonGroup"
+            <CheckBox
+                android:id="@+id/SwimSuitCheckBoxGroup"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Costumi"/>
 
-            <RadioButton
-                android:id="@+id/SweatshirtsRadioButtonGroup"
+            <CheckBox
+                android:id="@+id/SweatshirtsCheckBoxGroup"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Felpe"/>
 
-            <RadioButton
-                android:id="@+id/JeansRadioButtonGroup"
+            <CheckBox
+                android:id="@+id/JeansCheckBoxGroup"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Jeans"/>
 
-            <RadioButton
-                android:id="@+id/SportsRadioButtonGroup"
+            <CheckBox
+                android:id="@+id/SportsCheckBoxGroup"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Sportivo"/>
 
-            <RadioButton
-                android:id="@+id/TrousersRadioButtonGroup"
+            <CheckBox
+                android:id="@+id/TrousersCheckBoxGroup"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Pantaloni"/>
 
-            <RadioButton
-                android:id="@+id/T-ShirtsRadioButtonGroup"
+            <CheckBox
+                android:id="@+id/T-ShirtsCheckBoxGroup"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="T-Shirts"/>
 
-            <RadioButton
-                android:id="@+id/SneakersRadioButtonGroup"
+            <CheckBox
+                android:id="@+id/SneakersCheckBoxGroup"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Sneakers"/>
 
-            <RadioButton
-                android:id="@+id/FlatRadioButtonGroup"
+            <CheckBox
+                android:id="@+id/FlatCheckBoxGroup"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Basse"/>
 
-            <RadioButton
-                android:id="@+id/BootsRadioButtonGroup"
+            <CheckBox
+                android:id="@+id/BootsCheckBoxGroup"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Stivali"/>
 
-            <RadioButton
-                android:id="@+id/BagsRadioButtonGroup"
+            <CheckBox
+                android:id="@+id/BagsCheckBoxGroup"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Borse"/>
 
-            <RadioButton
-                android:id="@+id/HatsRadioButtonGroup"
+            <CheckBox
+                android:id="@+id/HatsCheckBoxGroup"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Cappelli"/>
 
-            <RadioButton
-                android:id="@+id/WatchesRadioButtonGroup"
+            <CheckBox
+                android:id="@+id/WatchesCheckBoxGroup"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Orologi"/>
 
-            <RadioButton
-                android:id="@+id/GlassesRadioButtonGroup"
+            <CheckBox
+                android:id="@+id/GlassesCheckBoxGroup"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Occhiali"/>
 
-            <RadioButton
-                android:id="@+id/RingsRadioButtonGroup"
+            <CheckBox
+                android:id="@+id/RingsCheckBoxGroup"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Anelli"/>
 
-            <RadioButton
-                android:id="@+id/BraceletsRadioButtonGroup"
+            <CheckBox
+                android:id="@+id/BraceletsCheckBoxGroup"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Bracciali"/>
 
-            <RadioButton
-                android:id="@+id/NecklacesRadioButtonGroup"
+            <CheckBox
+                android:id="@+id/NecklacesCheckBoxGroup"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Collane"/>
 
-            <RadioButton
-                android:id="@+id/EarringsRadioButtonGroup"
+            <CheckBox
+                android:id="@+id/EarringsCheckBoxGroup"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Orecchini"/>
 
-            <Spinner
-                android:id="@+id/spinnertaglia"
+            <TextView
+                android:id="@+id/SizeTextViewCatalog"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:entries="@array/Taglia"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.108"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.437" />
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="5dp"
+                android:text="Taglia"
+                android:textSize="18sp" />
 
             <Spinner
-                android:id="@+id/spinnercolore"
+                android:id="@+id/SizeSpinnerCatalog"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:entries="@array/Taglia" />
+
+            <TextView
+                android:id="@+id/ColorTextViewCatalog"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="5dp"
+                android:text="Colore"
+                android:textSize="18sp" />
+
+            <Spinner
+                android:id="@+id/ColorSpinnerCatalog"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:entries="@array/Colore"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.108"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.437" />
+                android:entries="@array/Colore" />
         </RadioGroup>
 
     </ScrollView>
@@ -344,7 +346,7 @@
     <include
         android:id="@+id/BottomBarContainerCatalog"
         layout="@layout/bottom_bar"
-        android:layout_width="410dp"
+        android:layout_width="0dp"
         android:layout_height="50dp"
         app:layout_constraintBottom_toTopOf="@id/BottomDividerCatalog"
         app:layout_constraintEnd_toEndOf="parent"

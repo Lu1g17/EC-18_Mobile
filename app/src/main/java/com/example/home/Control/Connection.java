@@ -8,7 +8,7 @@ import com.amazonaws.services.dynamodbv2.AmazonDynamoDBClient;
 import com.example.home.MainActivity;
 
 public class Connection extends MainActivity {
-    public void initConnectionDatabase(){
+    /*public void initConnectionDatabase(){
 
         AWSMobileClient.getInstance().initialize(this).execute();
 
@@ -18,5 +18,5 @@ public class Connection extends MainActivity {
         AmazonDynamoDBClient dynamoDBClient = new AmazonDynamoDBClient(credentialsProvider);
 
         this.dynamoDBMapper = DynamoDBMapper.builder().dynamoDBClient(dynamoDBClient).awsConfiguration(configuration).build();
-    }
+    }*/
 }

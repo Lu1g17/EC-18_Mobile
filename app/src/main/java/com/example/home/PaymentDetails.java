@@ -18,9 +18,9 @@ public class PaymentDetails extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.order_details);
 
-        txtId = (TextView)findViewById(R.id.textViewnumeroordine);
-        txtAmount = (TextView)findViewById(R.id.textViewriepilogoordine1);
-        txtStatus = (TextView)findViewById(R.id.textViewstato1);
+        txtId = (TextView)findViewById(R.id.NumberOrderDetails);
+        txtAmount = (TextView)findViewById(R.id.AmountOrderDetails);
+        txtStatus = (TextView)findViewById(R.id.StateOrderDetails);
 
         Intent intent = getIntent();
 

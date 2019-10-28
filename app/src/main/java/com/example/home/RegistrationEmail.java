@@ -15,7 +15,7 @@ public class RegistrationEmail extends AppCompatActivity {
         setContentView(R.layout.registration_email);
         //setContentView(R.layout.registration);
 
-        ImageButton Bregistration1 = (ImageButton) findViewById(R.id.imageButtonAvanti1);
+        ImageButton Bregistration1 = (ImageButton) findViewById(R.id.GoImageButtonRegistrationEmail);
 
         Bregistration1.setOnClickListener(new View.OnClickListener() {
             @Override

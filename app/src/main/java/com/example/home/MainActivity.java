@@ -82,14 +82,15 @@ public class MainActivity extends AppCompatActivity {
 
         });
 
-        connessione.initConnectionDatabase();
+        //connessione.initConnectionDatabase();
+        initConnectionDatabase();
 
         DynamoDBMapperCRUDExample elemento = new DynamoDBMapperCRUDExample();
 
         elemento.aggiungi(); //prova di lettura/aggiunta di un elemento
     }
 
-    /*public void initConnectionDatabase(){
+    public void initConnectionDatabase(){
 
         AWSMobileClient.getInstance().initialize(this).execute();
 
@@ -99,7 +100,7 @@ public class MainActivity extends AppCompatActivity {
         AmazonDynamoDBClient dynamoDBClient = new AmazonDynamoDBClient(credentialsProvider);
 
         this.dynamoDBMapper = DynamoDBMapper.builder().dynamoDBClient(dynamoDBClient).awsConfiguration(configuration).build();
-    }*/
+    }
 }
 
 

@@ -6,18 +6,17 @@
     android:layout_height="match_parent">
 
     <Button
-        android:id="@+id/buttonupdate"
+        android:id="@+id/UpdateButtonProfile"
         android:layout_width="80dp"
         android:layout_height="40dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="112dp"
+        android:layout_marginTop="10dp"
         android:background="@android:color/transparent"
         android:text="Modifica"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/LoginButtonProfile"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/buttonLogin3"
+        android:id="@+id/LoginButtonProfile"
         android:layout_width="80dp"
         android:layout_height="40dp"
         android:layout_marginTop="10dp"
@@ -28,209 +27,538 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/ProfileTextViewMenu"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/SectionTextViewProfile"
+        android:layout_width="130dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
         android:text="Profilo"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.094"
+        android:textSize="30sp"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.022" />
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/textView28"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="__________________________________________________"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <View
+        android:id="@+id/TopDividerProfile"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="50dp"
+        android:background="@android:color/darker_gray"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.489"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.068" />
-
-    <TextView
-        android:id="@+id/textViewdatipersonali"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Dati Personali"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.106"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.121" />
-
-    <TextView
-        android:id="@+id/textViewresidenza"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Residenza"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.106"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.625" />
-
-    <TextView
-        android:id="@+id/textViewnome"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Nome1"
-        android:textSize="14sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.106"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.178" />
-
-    <TextView
-        android:id="@+id/textViewcognome"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Cognome1"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.114"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.226" />
-
-    <TextView
-        android:id="@+id/textViewcodicefiscale"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="CodiceFiscale1"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.124"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.283" />
-
-    <TextView
-        android:id="@+id/textViewsesso"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Sesso1"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.106"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.339" />
-
-    <TextView
-        android:id="@+id/textViewdatanascita"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="DataNascita1"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.107"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.391" />
-
-    <TextView
-        android:id="@+id/textViewcittà"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Città1"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.101"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.452" />
-
-    <TextView
-        android:id="@+id/textViewcap"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="CAP!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.317"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.452" />
-
-    <TextView
-        android:id="@+id/textViewprovincia"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Provincia1"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.11"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/textViewnazione"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Nazione1"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <ScrollView
+        android:id="@+id/ScrollViewProfile"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/BottomBarContainerProfile"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.111"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.557" />
+        app:layout_constraintTop_toBottomOf="@+id/TopDividerProfile">
 
-    <TextView
-        android:id="@+id/textViewindirizzo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Indirizzo1"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.111"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.682" />
 
-    <TextView
-        android:id="@+id/textViewcittà2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Città2"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.104"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.742" />
+        <LinearLayout
+            android:id="@+id/LinearLayoutProfile"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/textViewcap2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="CAP2"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.321"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.742" />
+            <TextView
+                android:id="@+id/PersonalTextViewProfile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="5dp"
+                android:text="Personali"
+                android:textSize="30sp" />
 
-    <TextView
-        android:id="@+id/textViewprovincia2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Provincia2"
+            <TextView
+                android:id="@+id/NameTextViewProfile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="40dp"
+                android:layout_marginBottom="5dp"
+                android:text="* Nome:"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/NameProfile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="60dp"
+                android:layout_marginBottom="5dp"
+                android:text=""
+                android:textSize="20sp"
+                android:textStyle="italic" />
+
+            <TextView
+                android:id="@+id/SurnameTextViewProfile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="40dp"
+                android:layout_marginBottom="5dp"
+                android:text="* Cognome:"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/SurnameProfile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="60dp"
+                android:layout_marginBottom="5dp"
+                android:text=""
+                android:textSize="20sp"
+                android:textStyle="italic" />
+
+            <TextView
+                android:id="@+id/GenderTextViewProfile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="40dp"
+                android:layout_marginBottom="5dp"
+                android:text="* Sesso:"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/GenderProfile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="60dp"
+                android:layout_marginBottom="5dp"
+                android:text=""
+                android:textSize="20sp"
+                android:textStyle="italic" />
+
+            <TextView
+                android:id="@+id/BirthDateTextViewProfile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="40dp"
+                android:layout_marginBottom="5dp"
+                android:inputType="date"
+                android:text="* Data di Nascita:"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/DateProfile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="60dp"
+                android:layout_marginBottom="5dp"
+                android:text=""
+                android:textSize="20sp"
+                android:textStyle="italic" />
+
+            <TextView
+                android:id="@+id/FiscalCodeTextViewProfile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="40dp"
+                android:layout_marginBottom="5dp"
+                android:text="* Codice Fiscale:"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/FiscalCodeProfile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="60dp"
+                android:layout_marginBottom="5dp"
+                android:text=""
+                android:textSize="20sp"
+                android:textStyle="italic" />
+
+            <TextView
+                android:id="@+id/ResidenceTextViewProfile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="5dp"
+                android:text="Residenza"
+                android:textSize="30sp" />
+
+            <TextView
+                android:id="@+id/ResidenceNationTextViewProfile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="40dp"
+                android:layout_marginBottom="5dp"
+                android:text="* Nazione:"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/ResidenceNationProfile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="60dp"
+                android:layout_marginBottom="5dp"
+                android:text=""
+                android:textSize="20sp"
+                android:textStyle="italic" />
+
+            <TextView
+                android:id="@+id/ResidenceRegionTextViewProfile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="40dp"
+                android:layout_marginBottom="5dp"
+                android:text="* Regione:"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/ResidenceRegionProfile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="60dp"
+                android:layout_marginBottom="5dp"
+                android:text=""
+                android:textSize="20sp"
+                android:textStyle="italic" />
+
+            <TextView
+                android:id="@+id/ResidenceProvinceTextViewProfile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="40dp"
+                android:layout_marginBottom="5dp"
+                android:text="* Provincia:"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/ResidenceProvinceProfile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="60dp"
+                android:layout_marginBottom="5dp"
+                android:text=""
+                android:textSize="20sp"
+                android:textStyle="italic" />
+
+            <TextView
+                android:id="@+id/ResidenceCityTextViewProfile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="40dp"
+                android:layout_marginBottom="5dp"
+                android:text="* Città"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/ResidenceCityProfile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="60dp"
+                android:layout_marginBottom="5dp"
+                android:text=""
+                android:textSize="20sp"
+                android:textStyle="italic" />
+
+            <TextView
+                android:id="@+id/ResidenceAddressTextViewProfile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="40dp"
+                android:layout_marginBottom="5dp"
+                android:text="* Indirizzo:"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/ResidenceAddressProfile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="60dp"
+                android:layout_marginBottom="5dp"
+                android:text=""
+                android:textSize="20sp"
+                android:textStyle="italic" />
+
+            <TextView
+                android:id="@+id/ResidenceCAPTextViewProfile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="40dp"
+                android:layout_marginBottom="5dp"
+                android:text="* CAP:"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/ResidenceCAPProfile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="60dp"
+                android:layout_marginBottom="5dp"
+                android:text=""
+                android:textSize="20sp"
+                android:textStyle="italic" />
+
+            <TextView
+                android:id="@+id/ShippingTextViewProfile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="5dp"
+                android:text="Spedizione"
+                android:textSize="30sp" />
+
+            <TextView
+                android:id="@+id/ShippingNationTextViewProfile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="40dp"
+                android:layout_marginBottom="5dp"
+                android:text="Nazione:"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/ShippingNationProfile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="60dp"
+                android:layout_marginBottom="5dp"
+                android:text=""
+                android:textSize="20sp"
+                android:textStyle="italic" />
+
+            <TextView
+                android:id="@+id/ShippingRegionTextViewProfile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="40dp"
+                android:layout_marginBottom="5dp"
+                android:text="Regione:"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/ShippingRegionProfile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="60dp"
+                android:layout_marginBottom="5dp"
+                android:text=""
+                android:textSize="20sp"
+                android:textStyle="italic" />
+
+            <TextView
+                android:id="@+id/ShippingProvinceProfile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="40dp"
+                android:layout_marginBottom="5dp"
+                android:text="Provincia:"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/ShippingProvinceTextViewProfile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="60dp"
+                android:layout_marginBottom="5dp"
+                android:text=""
+                android:textSize="20sp"
+                android:textStyle="italic" />
+
+            <TextView
+                android:id="@+id/ShippingCityTextViewProfile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="40dp"
+                android:layout_marginBottom="5dp"
+                android:text="Città"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/ShippingCityProfile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="60dp"
+                android:layout_marginBottom="5dp"
+                android:text=""
+                android:textSize="20sp"
+                android:textStyle="italic" />
+
+            <TextView
+                android:id="@+id/ShippingAddressTextViewProfile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="40dp"
+                android:layout_marginBottom="5dp"
+                android:text="Indirizzo:"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/ShippingAddressProfile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="60dp"
+                android:layout_marginBottom="5dp"
+                android:text=""
+                android:textSize="20sp"
+                android:textStyle="italic" />
+
+            <TextView
+                android:id="@+id/ShippingCAPTextViewProfile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="40dp"
+                android:layout_marginBottom="5dp"
+                android:text="CAP:"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/ShippingCAPProfile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="60dp"
+                android:layout_marginBottom="5dp"
+                android:text=""
+                android:textSize="20sp"
+                android:textStyle="italic" />
+
+            <TextView
+                android:id="@+id/BillingTextViewProfile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="5dp"
+                android:text="Fatturazione"
+                android:textSize="30sp" />
+
+            <TextView
+                android:id="@+id/BillingNationTextViewProfile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="40dp"
+                android:layout_marginBottom="5dp"
+                android:text="Nazione:"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/BillingNationProfile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="60dp"
+                android:layout_marginBottom="5dp"
+                android:text=""
+                android:textSize="20sp"
+                android:textStyle="italic" />
+
+            <TextView
+                android:id="@+id/BillingRegionTextViewProfile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="40dp"
+                android:layout_marginBottom="5dp"
+                android:text="Regione:"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/BillingRegionProfile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="60dp"
+                android:layout_marginBottom="5dp"
+                android:text=""
+                android:textSize="20sp"
+                android:textStyle="italic" />
+
+            <TextView
+                android:id="@+id/BillingProvinceTextViewProfile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="40dp"
+                android:layout_marginBottom="5dp"
+                android:text="Provincia:"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/BillingProvinceProfile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="60dp"
+                android:layout_marginBottom="5dp"
+                android:text=""
+                android:textSize="20sp"
+                android:textStyle="italic" />
+
+            <TextView
+                android:id="@+id/BillingCityTextViewProfile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="40dp"
+                android:layout_marginBottom="5dp"
+                android:text="Città"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/BillingCityProfile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="60dp"
+                android:layout_marginBottom="5dp"
+                android:text=""
+                android:textSize="20sp"
+                android:textStyle="italic" />
+
+            <TextView
+                android:id="@+id/BillingAddressTextViewProfile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="40dp"
+                android:layout_marginBottom="5dp"
+                android:text="Indirizzo:"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/BillingAddressProfile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="60dp"
+                android:layout_marginBottom="5dp"
+                android:text=""
+                android:textSize="20sp"
+                android:textStyle="italic" />
+
+            <TextView
+                android:id="@+id/BillingCAPTextViewProfile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="40dp"
+                android:layout_marginBottom="5dp"
+                android:text="CAP:"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/BillingCAPProfile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="60dp"
+                android:layout_marginBottom="5dp"
+                android:text=""
+                android:textSize="20sp"
+                android:textStyle="italic" />
+
+        </LinearLayout>
+    </ScrollView>
+
+    <View
+        android:id="@+id/BottomDividerProfile"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginBottom="50dp"
+        android:background="@android:color/darker_gray"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.113"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <include
+        android:id="@+id/BottomBarContainerProfile"
+        layout="@layout/bottom_bar"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        app:layout_constraintBottom_toTopOf="@id/BottomDividerProfile"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.808" />
+        app:layout_constraintTop_toBottomOf="parent"
+        app:layout_constraintVertical_bias="0.495" />
+    
 </androidx.constraintlayout.widget.ConstraintLayout>

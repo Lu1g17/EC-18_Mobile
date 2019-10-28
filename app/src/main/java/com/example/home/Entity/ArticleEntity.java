@@ -47,6 +47,10 @@ public class ArticleEntity {
             setAttached(attached);
         }
 
+        public ArticleEntity(String code) {
+            setCode(code);
+        }
+
         @DynamoDBHashKey(attributeName = "Code")
         @DynamoDBAttribute(attributeName = "Code")
         public String getCode() {
@@ -249,5 +253,112 @@ public class ArticleEntity {
                 throw new RequiredFieldsException("Quantità");
         }*/
 
+    /*public boolean create() throws RequiredFieldsException {
+        Table table = dynamoDB.getTable("Article");
 
+        try {
+            checkRequiredFields();
+
+            System.out.println("Adding article new item...");
+            PutItemOutcome outcome = table.putItem(new Item().withPrimaryKey("Code", code).withString("Gender", gender).withString("Title", name)
+                    .withString("Brand", brand).withFloat("Price", price).withString("Category", category).withString("Typology", type)
+                    .withString("Size", size).withString("Quantity", quantity).withString("Color", color).withString("Fit", fit)
+                    .withString("Composition", composition).withString("Warnings", warnings).withString("Description", description).withString("Attached", attached));
+            System.out.println("PutItem succeeded:\n" + outcome.getPutItemResult());
+
+            return true;
+        } catch (RequiredFieldsException re) {
+            System.err.println("Unable to add item " + code + " because there are required fields not filled: ");
+            System.err.println(re.getMessage());
+
+            throw new RequiredFieldsException(re.getField());
+        } catch (Exception e) {
+            System.err.println("Unable to add item: " + code);
+            System.err.println(e.getMessage());
+        }
+
+        return false;
+    }*/
+
+    /*public ArticleEntity read() {
+        Table table = dynamoDB.getTable("Article");
+
+        try {
+            GetItemSpec spec = new GetItemSpec().withPrimaryKey("Code", this.code);
+
+            System.out.println("Attempting to read the item...");
+            Item outcome = table.getItem(spec);
+            System.out.println("GetItem succeeded: " + outcome);
+
+            this.code = outcome.getString("Code");
+            this.gender = outcome.getString("Gender");
+            this.name = outcome.getString("Title");
+            this.brand = outcome.getString("Brand");
+            this.category = outcome.getString("Category");
+            this.type = outcome.getString("Typology");
+            this.size = outcome.getString("Size");
+            this.price = outcome.getFloat("Price");
+            this.quantity = outcome.getString("Quantity");
+            this.color = outcome.getString("Color");
+            this.fit = outcome.getString("Fit");
+            this.composition = outcome.getString("Composition");
+            this.warnings = outcome.getString("Warnings");
+            this.description = outcome.getString("Description");
+            this.attached = outcome.getString("Attached");
+
+            return this;
+        } catch (Exception e) {
+            System.err.println("Unable to read item: " + this.code);
+            System.err.println(e.getMessage());
+        }
+
+        return null;
+    }*/
+
+    /*public boolean update() throws RequiredFieldsException {
+        Table table = dynamoDB.getTable("Article");
+
+        try {
+            checkRequiredFields();
+
+            UpdateItemSpec updateItemSpec = new UpdateItemSpec().withPrimaryKey("Code", code)
+                    .withUpdateExpression("set Gender = :g, Title = :t, Brand = :b, Price = :p, Category = :c, Typology = :ty, Size = :s, Quantity = :q, Color = :co, Fit = :f, Composition = :com, Warnings = :w, Description = :d, Attached = :a")
+                    .withValueMap(new ValueMap().withString(":g", gender).withString(":t", name).withString(":b", brand).withNumber(":p", price).withString(":c", category).withString(":ty", type).withString(":s", size).withString(":q", quantity).withString(":co", color).withString(":f", fit).withString(":com", composition).withString(":w", warnings).withString(":d", description).withString(":a", attached)).withReturnValues(ReturnValue.UPDATED_NEW);
+
+            System.out.println("Updating the item...");
+            UpdateItemOutcome outcome = table.updateItem(updateItemSpec);
+            System.out.println("UpdateItem succeeded:\n" + outcome.getItem().toJSONPretty());
+
+            return true;
+        } catch (RequiredFieldsException re) {
+            System.err.println("Unable to add item " + code + " because there are required fields not filled: ");
+            System.err.println(re.getMessage());
+
+            throw new RequiredFieldsException(re.getField());
+        } catch (Exception e) {
+            System.err.println("Unable to update item: " + code);
+            System.err.println(e.getMessage());
+        }
+
+        return false;
+    }*/
+
+    /*public boolean delete() {
+        Table table = dynamoDB.getTable("Article");
+
+        try {
+            DeleteItemSpec deleteItemSpec = new DeleteItemSpec().withPrimaryKey("Code", code);
+
+            System.out.println("Attempting article conditional delete...");
+            DeleteItemOutcome outcome = table.deleteItem(deleteItemSpec);
+            System.out.println("DeleteItem succeeded");
+
+            return true;
+        } catch (Exception e) {
+            System.err.println("Unable to delete item: " + code);
+            System.err.println(e.getMessage());
+        }
+
+        return false;
+    }*/
 }

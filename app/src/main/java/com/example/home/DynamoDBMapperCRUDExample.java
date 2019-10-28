@@ -1,23 +1,11 @@
 package com.example.home;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import com.amazonaws.mobileconnectors.dynamodbv2.dynamodbmapper.DynamoDBAttribute;
 import com.amazonaws.mobileconnectors.dynamodbv2.dynamodbmapper.DynamoDBHashKey;
-import com.amazonaws.mobileconnectors.dynamodbv2.dynamodbmapper.DynamoDBMapper;
 import com.amazonaws.mobileconnectors.dynamodbv2.dynamodbmapper.DynamoDBTable;
 import static com.example.home.MainActivity.dynamoDBMapper;
-import com.amazonaws.services.dynamodbv2.AmazonDynamoDB;
-
-import java.lang.reflect.Array;
-import java.util.ArrayList;
-import java.util.List;
-//import com.amazonaws.services.dynamodbv2.AmazonDynamoDBClientBuilder;
 
 public class DynamoDBMapperCRUDExample{
-
-    //static AmazonDynamoDB client = AmazonDynamoDBClientBuilder.standard().build();
-
 
     @DynamoDBTable(tableName = "Article")
     public static class ArticleItem{

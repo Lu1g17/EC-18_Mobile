@@ -18,7 +18,7 @@ public class Menu extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.menu);
 
-        Button loginButton = findViewById(R.id.LoginButton);
+        Button loginButton = findViewById(R.id.LoginButtonMenu);
         ImageButton homeButton = findViewById(R.id.imageButtonHome);
         ImageButton catalog = findViewById(R.id.imageButtonCatalog);
         ImageButton search = findViewById(R.id.imageButtonSearch);

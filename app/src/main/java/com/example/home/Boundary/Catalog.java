@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
@@ -23,7 +24,6 @@ public class Catalog extends AppCompatActivity {
         ImageButton search = findViewById(R.id.imageButtonSearch);
         ImageButton shoppingCart = findViewById(R.id.imageButtonShoppingCart);
         ImageButton menu = findViewById(R.id.imageButtonMenu);
-        TextView clothing = findViewById(R.id.clothingTextView);
 
         loginButton.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -74,34 +74,7 @@ public class Catalog extends AppCompatActivity {
             }
 
         });
-        
-        clothing.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v) {
-                System.out.println("hai premuto su clothing");
-            }
 
-        });
-
-        TextView calzature = findViewById(R.id.footwearTextView);
-
-        clothing.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v) {
-                System.out.println("hai premuto su calzature");
-            }
-
-        });
-
-        TextView accessori = findViewById(R.id.accessoriesTextView);
-
-        clothing.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v) {
-                System.out.println("hai premuto su accessori");
-            }
-
-        });
 
     }
 }

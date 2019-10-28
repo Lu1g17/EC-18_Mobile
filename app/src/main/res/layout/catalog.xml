@@ -75,11 +75,143 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
+            <CheckBox android:id="@+id/checkbox_meat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="wewe"
+                android:onClick="onCheckboxClicked"/>
+
+            <CheckBox android:id="@+id/checkbox_cheese"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="wow"
+                android:onClick="onCheckboxClicked"/>
+
             <RadioButton
                 android:id="@+id/SwimSuitRadioButtonGroup"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Costumi"/>
+
+            <RadioButton
+                android:id="@+id/SweatshirtsRadioButtonGroup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Felpe"/>
+
+            <RadioButton
+                android:id="@+id/JeansRadioButtonGroup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Jeans"/>
+
+            <RadioButton
+                android:id="@+id/SportsRadioButtonGroup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sportivo"/>
+
+            <RadioButton
+                android:id="@+id/TrousersRadioButtonGroup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pantaloni"/>
+
+            <RadioButton
+                android:id="@+id/T-ShirtsRadioButtonGroup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="T-Shirts"/>
+
+            <RadioButton
+                android:id="@+id/SneakersRadioButtonGroup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sneakers"/>
+
+            <RadioButton
+                android:id="@+id/FlatRadioButtonGroup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Basse"/>
+
+            <RadioButton
+                android:id="@+id/BootsRadioButtonGroup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Stivali"/>
+
+            <RadioButton
+                android:id="@+id/BagsRadioButtonGroup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Borse"/>
+
+            <RadioButton
+                android:id="@+id/HatsRadioButtonGroup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cappelli"/>
+
+            <RadioButton
+                android:id="@+id/WatchesRadioButtonGroup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Orologi"/>
+
+            <RadioButton
+                android:id="@+id/GlassesRadioButtonGroup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Occhiali"/>
+
+            <RadioButton
+                android:id="@+id/RingsRadioButtonGroup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Anelli"/>
+
+            <RadioButton
+                android:id="@+id/BraceletsRadioButtonGroup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Bracciali"/>
+
+            <RadioButton
+                android:id="@+id/NecklacesRadioButtonGroup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Collane"/>
+
+            <RadioButton
+                android:id="@+id/EarringsRadioButtonGroup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Orecchini"/>
+
+            <Spinner
+                android:id="@+id/spinnertaglia"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:entries="@array/Taglia"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.108"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.437" />
+
+            <Spinner
+                android:id="@+id/spinnercolore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:entries="@array/Colore"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.108"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.437" />
         </RadioGroup>
 
     </ScrollView>

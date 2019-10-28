@@ -28,4 +28,22 @@
         <item>Accessori</item>
     </string-array>
 
+    <string-array name="Taglia">
+        <item>Taglia</item>
+        <item>XS</item>
+        <item>S</item>
+        <item>M</item>
+        <item>L</item>
+        <item>XL</item>
+    </string-array>
+
+    <string-array name="Colore">
+        <item>Colore</item>
+        <item>Bianco</item>
+        <item>Blu</item>
+        <item>Rosso</item>
+        <item>Giallo</item>
+        <item>Verde</item>
+        <item>Nero</item>
+    </string-array>
 </resources>

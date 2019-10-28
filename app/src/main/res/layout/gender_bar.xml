@@ -16,8 +16,7 @@
         android:background="@color/colorPrimary"
         android:text="Uomo"
         app:layout_constraintEnd_toStartOf="@+id/womanButton"
-        app:layout_constraintStart_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@id/TopDivider" />
+        app:layout_constraintStart_toEndOf="parent" />
 
     <Button
         android:id="@+id/womanButton"
@@ -28,8 +27,7 @@
         android:background="@android:color/transparent"
         android:text="Donna"
         app:layout_constraintEnd_toStartOf="@+id/kidButton"
-        app:layout_constraintStart_toEndOf="@id/manButton"
-        app:layout_constraintTop_toTopOf="@id/TopDivider" />
+        app:layout_constraintStart_toEndOf="@id/manButton"/>
 
     <Button
         android:id="@+id/kidButton"
@@ -40,7 +38,6 @@
         android:background="@android:color/transparent"
         android:text="Bambino"
         app:layout_constraintEnd_toStartOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/womanButton"
-        app:layout_constraintTop_toTopOf="@id/TopDivider" />
+        app:layout_constraintStart_toEndOf="@+id/womanButton" />
 
 </LinearLayout>

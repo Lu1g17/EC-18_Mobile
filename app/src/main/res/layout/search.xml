@@ -6,7 +6,7 @@
     android:layout_height="match_parent">
 
     <Button
-        android:id="@+id/LoginButton"
+        android:id="@+id/LoginButtonSearch"
         android:layout_width="80dp"
         android:layout_height="40dp"
         android:layout_marginTop="10dp"
@@ -28,7 +28,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <View
-        android:id="@+id/TopDivider"
+        android:id="@+id/TopDividerSearch"
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_marginTop="50dp"
@@ -52,7 +52,7 @@
         android:textStyle="normal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/TopDivider" />
+        app:layout_constraintTop_toBottomOf="@id/TopDividerSearch" />
 
     <ScrollView
         android:id="@+id/ScrollViewSearch"
@@ -60,7 +60,7 @@
         android:layout_height="0dp"
         android:layout_marginTop="5dp"
         android:layout_marginBottom="5dp"
-        app:layout_constraintBottom_toTopOf="@+id/BottomDivider"
+        app:layout_constraintBottom_toTopOf="@+id/BottomDividerSearch"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/TextViewSearch">
@@ -173,7 +173,7 @@
     </ScrollView>
 
     <View
-        android:id="@+id/BottomDivider"
+        android:id="@+id/BottomDividerSearch"
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_marginBottom="50dp"
@@ -187,7 +187,7 @@
         layout="@layout/bottom_bar"
         android:layout_width="410dp"
         android:layout_height="50dp"
-        app:layout_constraintBottom_toTopOf="@id/BottomDivider"
+        app:layout_constraintBottom_toTopOf="@id/BottomDividerSearch"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="parent"

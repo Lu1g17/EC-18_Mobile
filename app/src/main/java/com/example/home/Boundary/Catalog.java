@@ -18,7 +18,7 @@ public class Catalog extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.catalog);
         
-        Button loginButton = findViewById(R.id.LoginButton);
+        Button loginButton = findViewById(R.id.LoginButtonCatalog);
         ImageButton homeButton = findViewById(R.id.imageButtonHome);
         ImageButton search = findViewById(R.id.imageButtonSearch);
         ImageButton shoppingCart = findViewById(R.id.imageButtonShoppingCart);

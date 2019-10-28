@@ -19,7 +19,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/LoginButton"
+        android:id="@+id/LoginButtonHome"
         android:layout_width="80dp"
         android:layout_height="40dp"
         android:layout_marginTop="10dp"
@@ -30,7 +30,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <View
-        android:id="@+id/TopDivider"
+        android:id="@+id/TopDividerHome"
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_marginTop="50dp"
@@ -46,7 +46,7 @@
         android:text="In Primo Piano"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/TopDivider" />
+        app:layout_constraintTop_toBottomOf="@id/TopDividerHome" />
 
     <ScrollView
         android:id="@+id/ScrollViewHome"
@@ -54,7 +54,7 @@
         android:layout_height="0dp"
         android:layout_marginTop="5dp"
         android:layout_marginBottom="5dp"
-        app:layout_constraintBottom_toTopOf="@id/BottomDivider"
+        app:layout_constraintBottom_toTopOf="@id/BottomDividerHome"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/TextViewHome">
@@ -108,7 +108,7 @@
     </ScrollView>
 
     <View
-        android:id="@+id/BottomDivider"
+        android:id="@+id/BottomDividerHome"
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_marginBottom="50dp"
@@ -122,7 +122,7 @@
         layout="@layout/bottom_bar"
         android:layout_width="410dp"
         android:layout_height="50dp"
-        app:layout_constraintBottom_toTopOf="@id/BottomDivider"
+        app:layout_constraintBottom_toTopOf="@id/BottomDividerHome"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="parent"

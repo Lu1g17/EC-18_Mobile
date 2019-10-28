@@ -17,7 +17,7 @@ public class ShoppingCart extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.shopping_cart);
 
-        Button loginButton = findViewById(R.id.LoginButton);
+        Button loginButton = findViewById(R.id.LoginButtonShoppingCart);
         ImageButton homeButton = findViewById(R.id.imageButtonHome);
         ImageButton catalog = findViewById(R.id.imageButtonCatalog);
         ImageButton search = findViewById(R.id.imageButtonSearch);

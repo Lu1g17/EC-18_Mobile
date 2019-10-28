@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Button loginButton = findViewById(R.id.LoginButton);
+        Button loginButton = findViewById(R.id.LoginButtonHome);
         ImageButton catalog = findViewById(R.id.imageButtonCatalog);
         ImageButton search = findViewById(R.id.imageButtonSearch);
         ImageButton shoppingCart = findViewById(R.id.imageButtonShoppingCart);

@@ -229,108 +229,16 @@
         app:layout_constraintStart_toEndOf="@+id/FilterScrollViewCatalog"
         app:layout_constraintTop_toBottomOf="@id/CategoryBarContainerCatalog">
 
-        <TableLayout
-            android:id="@+id/TableLayoutCatalog"
+        <GridView
+            android:id="@+id/GridViewCatalog"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <TableRow android:id="@+id/TableRowCatalog1">
 
-                <include
-                    android:id="@+id/LeftImageContainerCatalog1"
-                    layout="@layout/image_layout"
-                    android:layout_width="150dp"
-                    android:layout_height="180dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginEnd="5dp" />
 
-                <include
-                    android:id="@+id/RightImageContainerCatalog1"
-                    layout="@layout/image_layout"
-                    android:layout_width="150dp"
-                    android:layout_height="180dp"
-                    android:layout_marginTop="10dp" />
+        </GridView>
 
-            </TableRow>
-
-            <TableRow android:id="@+id/TableRowCatalog2">
-
-                <include
-                    android:id="@+id/LeftImageContainerCatalog2"
-                    layout="@layout/image_layout"
-                    android:layout_width="150dp"
-                    android:layout_height="180dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginEnd="5dp" />
-
-                <include
-                    android:id="@+id/RightImageContainerCatalog2"
-                    layout="@layout/image_layout"
-                    android:layout_width="150dp"
-                    android:layout_height="180dp"
-                    android:layout_marginTop="10dp" />
-
-            </TableRow>
-
-            <TableRow android:id="@+id/TableRowCatalog3">
-
-                <include
-                    android:id="@+id/LeftImageContainerCatalog3"
-                    layout="@layout/image_layout"
-                    android:layout_width="150dp"
-                    android:layout_height="180dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginEnd="5dp" />
-
-                <include
-                    android:id="@+id/RightImageContainerCatalog3"
-                    layout="@layout/image_layout"
-                    android:layout_width="150dp"
-                    android:layout_height="180dp"
-                    android:layout_marginTop="10dp" />
-
-            </TableRow>
-
-            <TableRow android:id="@+id/TableRowCatalog4">
-
-                <include
-                    android:id="@+id/LeftImageContainerCatalog4"
-                    layout="@layout/image_layout"
-                    android:layout_width="150dp"
-                    android:layout_height="180dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginEnd="5dp" />
-
-                <include
-                    android:id="@+id/RightImageContainerCatalog4"
-                    layout="@layout/image_layout"
-                    android:layout_width="150dp"
-                    android:layout_height="180dp"
-                    android:layout_marginTop="10dp" />
-
-            </TableRow>
-
-            <TableRow android:id="@+id/TableRowCatalog5">
-
-                <include
-                    android:id="@+id/LeftImageContainerCatalog5"
-                    layout="@layout/image_layout"
-                    android:layout_width="150dp"
-                    android:layout_height="180dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginEnd="5dp" />
-
-                <include
-                    android:id="@+id/RightImageContainerCatalog5"
-                    layout="@layout/image_layout"
-                    android:layout_width="150dp"
-                    android:layout_height="180dp"
-                    android:layout_marginTop="10dp" />
-
-            </TableRow>
-
-        </TableLayout>
     </ScrollView>
 
     <View

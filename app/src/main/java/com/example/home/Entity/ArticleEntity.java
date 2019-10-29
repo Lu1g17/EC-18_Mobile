@@ -2,12 +2,18 @@ package com.example.home.Entity;
 
 import com.amazonaws.mobileconnectors.dynamodbv2.dynamodbmapper.DynamoDBAttribute;
 import com.amazonaws.mobileconnectors.dynamodbv2.dynamodbmapper.DynamoDBHashKey;
+import com.amazonaws.mobileconnectors.dynamodbv2.dynamodbmapper.DynamoDBMapper;
+import com.amazonaws.mobileconnectors.dynamodbv2.dynamodbmapper.DynamoDBScanExpression;
 import com.amazonaws.mobileconnectors.dynamodbv2.dynamodbmapper.DynamoDBTable;
+import com.example.home.RequiredFieldsException;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import static com.example.home.Boundary.MainActivity.dynamoDBMapper;
 
 @DynamoDBTable(tableName = "Article")
 public class ArticleEntity {
-
-
         private String code, gender, name, brand, category, type, size, quantity, color, fit, composition, warnings, description, attached;
         private Float price;
 
@@ -232,7 +238,7 @@ public class ArticleEntity {
                 this.attached = attached;
         }
 
-        /*public void checkRequiredFields() throws RequiredFieldsException {
+        public void checkRequiredFields() throws RequiredFieldsException {
             if (getCode().equals("Non definito"))
                 throw new RequiredFieldsException("Codice Articolo");
             if (getGender().equals("Non definito"))
@@ -251,7 +257,7 @@ public class ArticleEntity {
                 throw new RequiredFieldsException("Taglia");
             if (getQuantity().equals("Non definito"))
                 throw new RequiredFieldsException("Quantità");
-        }*/
+        }
 
     /*public boolean create() throws RequiredFieldsException {
         Table table = dynamoDB.getTable("Article");
@@ -361,4 +367,25 @@ public class ArticleEntity {
 
         return false;
     }*/
+
+    public ArrayList<ArticleEntity> getList() {
+        ArrayList<ArticleEntity> lista = new ArrayList<ArticleEntity>();
+
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+System.out.println("HOLA");
+                System.out.println("Scanning Tesis");
+
+                DynamoDBScanExpression scanExpression = new DynamoDBScanExpression();
+                List<ArticleEntity> li = dynamoDBMapper.parallelScan(ArticleEntity.class, scanExpression, 16);
+System.out.println("CIAO");
+                for (ArticleEntity article : li) {
+                    System.out.println("QUESTO È L'ITEM CON CODICE" + article.getCode()+ ": >" + article.getBrand());
+                }
+            }
+        }).start();
+
+        return lista;
+    }
 }

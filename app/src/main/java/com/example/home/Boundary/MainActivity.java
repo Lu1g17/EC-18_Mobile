@@ -14,13 +14,12 @@ import com.amazonaws.mobile.config.AWSConfiguration;
 
 import com.amazonaws.mobileconnectors.dynamodbv2.dynamodbmapper.DynamoDBMapper;
 import com.amazonaws.services.dynamodbv2.AmazonDynamoDBClient;
-import com.example.home.Control.Connection;
+import com.example.home.Entity.ArticleEntity;
 import com.example.home.R;
 
 public class MainActivity extends AppCompatActivity {
     //static boolean autenticato = false;
     public static DynamoDBMapper dynamoDBMapper;
-    public static Connection connessione = new Connection();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -83,15 +82,10 @@ public class MainActivity extends AppCompatActivity {
 
         });
 
-        //connessione.initConnectionDatabase();
         initConnectionDatabase();
-
-        DynamoDBMapperCRUDExample elemento = new DynamoDBMapperCRUDExample();
-
-        elemento.aggiungi(); //prova di lettura/aggiunta di un elemento
     }
 
-    public void initConnectionDatabase(){
+    public void initConnectionDatabase() {
 
         AWSMobileClient.getInstance().initialize(this).execute();
 

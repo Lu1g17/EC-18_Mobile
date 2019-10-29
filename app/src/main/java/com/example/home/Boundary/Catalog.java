@@ -5,12 +5,19 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.GridLayout;
+import android.widget.GridView;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.home.Control.ArticleControl;
+import com.example.home.Entity.ArticleEntity;
 import com.example.home.R;
+
+import java.util.ArrayList;
 
 public class Catalog extends AppCompatActivity {
 
@@ -18,6 +25,8 @@ public class Catalog extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.catalog);
+
+        ImageView image = findViewById(R.id.ImageViewCatalog);
         
         Button loginButton = findViewById(R.id.LoginButtonCatalog);
         ImageButton homeButton = findViewById(R.id.imageButtonHome);
@@ -75,6 +84,9 @@ public class Catalog extends AppCompatActivity {
 
         });
 
-
+        ArrayList<ArticleEntity> articoli = new ArticleControl().getList();
+        ArticleListAdapter adapter = new ArticleListAdapter(Catalog.this, R.layout.image_layout, articoli, image);
+        GridView view = (GridView) findViewById(R.id.GridViewCatalog);
+        view.setAdapter(adapter);
     }
 }

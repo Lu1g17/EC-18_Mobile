@@ -85,6 +85,16 @@ public class Catalog extends AppCompatActivity {
         });
 
         ArrayList<ArticleEntity> articoli = new ArticleControl().getList();
+
+        if (articoli != null)
+            System.out.println("\nNON NULL\n");
+        else
+            System.out.println("\nNULL\n");
+
+        for (ArticleEntity article : articoli) {
+            System.out.println("QUESTO È L'ITEM CON CODICE: " + article.getCode() + ": >" + article.getBrand());
+        }
+
         ArticleListAdapter adapter = new ArticleListAdapter(Catalog.this, R.layout.image_layout, articoli, image);
         GridView view = (GridView) findViewById(R.id.GridViewCatalog);
         view.setAdapter(adapter);

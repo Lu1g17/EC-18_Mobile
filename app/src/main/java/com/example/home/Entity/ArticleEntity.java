@@ -369,20 +369,15 @@ public class ArticleEntity {
     }*/
 
     public ArrayList<ArticleEntity> getList() {
-        ArrayList<ArticleEntity> lista = new ArrayList<ArticleEntity>();
+        final ArrayList<ArticleEntity> lista = new ArrayList<ArticleEntity>();
 
         new Thread(new Runnable() {
             @Override
             public void run() {
-System.out.println("HOLA");
-                System.out.println("Scanning Tesis");
-
                 DynamoDBScanExpression scanExpression = new DynamoDBScanExpression();
                 List<ArticleEntity> li = dynamoDBMapper.parallelScan(ArticleEntity.class, scanExpression, 16);
-System.out.println("CIAO");
-                for (ArticleEntity article : li) {
-                    System.out.println("QUESTO È L'ITEM CON CODICE" + article.getCode()+ ": >" + article.getBrand());
-                }
+
+                lista.addAll(li);
             }
         }).start();
 

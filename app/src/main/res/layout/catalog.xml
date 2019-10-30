@@ -18,12 +18,11 @@
 
     <Button
         android:id="@+id/LoginButtonCatalog"
-        android:layout_width="80dp"
+        android:layout_width="wrap_content"
         android:layout_height="40dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="10dp"
         android:background="@android:color/transparent"
-        android:text="Login"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -80,7 +79,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="5dp"
-                android:text="Categoria"
+                android:text="Tipologia"
                 android:textSize="18sp" />
 
             <CheckBox
@@ -231,12 +230,9 @@
 
         <GridView
             android:id="@+id/GridViewCatalog"
+            android:numColumns="2"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-        </GridView>
-
+            android:layout_height="match_parent" />
     </ScrollView>
 
     <View

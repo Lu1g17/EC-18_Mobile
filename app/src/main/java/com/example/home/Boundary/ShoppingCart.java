@@ -10,6 +10,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.home.R;
 
+import static com.example.home.Boundary.MainActivity.autenticazione;
+
 public class ShoppingCart extends AppCompatActivity {
 
     @Override
@@ -23,12 +25,24 @@ public class ShoppingCart extends AppCompatActivity {
         ImageButton search = findViewById(R.id.imageButtonSearch);
         ImageButton menu = findViewById(R.id.imageButtonMenu);
 
+        if (autenticazione == null) {
+            loginButton.setText("LOGIN");
+        } else {
+            loginButton.setText(autenticazione.getName());
+        }
+
         loginButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                Intent login = new Intent(ShoppingCart.this, Login.class);
+                if (autenticazione == null) {
+                    Intent login = new Intent(ShoppingCart.this, Login.class);
 
-                startActivity(login);
+                    startActivity(login);
+                } else {
+                    Intent profilo = new Intent(ShoppingCart.this, Profile.class);
+
+                    startActivity(profilo);
+                }
             }
 
         });

@@ -7,37 +7,37 @@
     android:orientation="horizontal">
 
     <Button
-        android:id="@+id/manButton"
+        android:id="@+id/ManButtonCatalog"
         style="@style/Widget.AppCompat.Button"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="15dp"
+        android:layout_marginLeft="0dp"
         android:layout_marginRight="15dp"
-        android:background="@color/colorPrimary"
+        android:background="@android:color/transparent"
         android:text="Uomo"
-        app:layout_constraintEnd_toStartOf="@+id/womanButton"
+        app:layout_constraintEnd_toStartOf="@+id/WomanButtonCatalog"
         app:layout_constraintStart_toEndOf="parent" />
 
     <Button
-        android:id="@+id/womanButton"
+        android:id="@+id/WomanButtonCatalog"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
         android:background="@android:color/transparent"
         android:text="Donna"
-        app:layout_constraintEnd_toStartOf="@+id/kidButton"
-        app:layout_constraintStart_toEndOf="@id/manButton" />
+        app:layout_constraintEnd_toStartOf="@+id/KidButtonCatalog"
+        app:layout_constraintStart_toEndOf="@id/ManButtonCatalog" />
 
     <Button
-        android:id="@+id/kidButton"
+        android:id="@+id/KidButtonCatalog"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp"
+        android:layout_marginRight="0dp"
         android:background="@android:color/transparent"
         android:text="Bambino"
         app:layout_constraintEnd_toStartOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/womanButton" />
+        app:layout_constraintStart_toEndOf="@+id/WomanButtonCatalog" />
 
 </LinearLayout>

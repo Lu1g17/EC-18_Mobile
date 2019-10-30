@@ -1,6 +1,7 @@
 package com.example.home.Boundary;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,6 +19,7 @@ public class ArticleListAdapter extends ArrayAdapter<ArticleEntity> {
     private Context context;
     private int resource;
     private ArrayList<ArticleEntity> lista;
+    public String code;
 
     private static class Layout {
         TextView name;
@@ -41,8 +43,7 @@ public class ArticleListAdapter extends ArrayAdapter<ArticleEntity> {
         String brand = getItem(position).getBrand();
         Float price = getItem(position).getPrice();
         String attached = getItem(position).getAttached();
-
-        if (attached != null) System.out.println("\nURL VALIDO> \n" + attached);
+        code = getItem(position).getCode();
 
         Layout viewHolder;
         if (convertView == null) {
@@ -50,9 +51,9 @@ public class ArticleListAdapter extends ArrayAdapter<ArticleEntity> {
             convertView = inflater.inflate(resource, parent, false);
 
             viewHolder = new Layout();
-            viewHolder.name = (TextView)convertView.findViewById(R.id.NameTextViewCatalog);
-            viewHolder.brand = (TextView)convertView.findViewById(R.id.BrandTextViewCatalog);
-            viewHolder.price = (TextView)convertView.findViewById(R.id.PriceTextViewCatalog);
+            viewHolder.name = (TextView)convertView.findViewById(R.id.NameCatalog);
+            viewHolder.brand = (TextView)convertView.findViewById(R.id.BrandCatalog);
+            viewHolder.price = (TextView)convertView.findViewById(R.id.PriceCatalog);
             viewHolder.attached = (ImageView) convertView.findViewById(R.id.ImageViewCatalog);
 
             convertView.setTag(viewHolder);
@@ -64,7 +65,15 @@ public class ArticleListAdapter extends ArrayAdapter<ArticleEntity> {
         viewHolder.brand.setText(brand);
         viewHolder.price.setText(String.valueOf(price));
         Picasso.with(context).load(attached).into(viewHolder.attached);
-        //Glide.with(context).load(attached).into(viewHolder.attached);
+
+        viewHolder.attached.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                Intent article = new Intent(context, Article.class);
+                article.putExtra("code", code);
+                context.startActivity(article);
+            }
+        });
 
         return convertView;
     }

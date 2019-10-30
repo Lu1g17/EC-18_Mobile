@@ -2,6 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -10,19 +11,10 @@
         android:layout_width="80dp"
         android:layout_height="40dp"
         android:layout_marginTop="10dp"
-        android:background="@android:color/transparent"
-        android:text="Modifica"
-        app:layout_constraintEnd_toStartOf="@+id/LoginButtonProfile"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/LoginButtonProfile"
-        android:layout_width="80dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="10dp"
         android:layout_marginEnd="10dp"
         android:background="@android:color/transparent"
-        android:text="Login"
+        android:clickable="true"
+        android:text="Modifica"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -140,7 +132,7 @@
                 android:textSize="20sp" />
 
             <TextView
-                android:id="@+id/DateProfile"
+                android:id="@+id/BirthDateProfile"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="60dp"
@@ -169,6 +161,72 @@
                 android:textStyle="italic" />
 
             <TextView
+                android:id="@+id/BirthTextViewProfile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="5dp"
+                android:text="Nascita"
+                android:textSize="30sp" />
+
+            <TextView
+                android:id="@+id/BirthNationTextViewProfile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="40dp"
+                android:layout_marginBottom="5dp"
+                android:text="* Nazione:"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/BirthNationProfile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="60dp"
+                android:layout_marginBottom="5dp"
+                android:text=""
+                android:textSize="20sp"
+                android:textStyle="italic" />
+
+            <TextView
+                android:id="@+id/BirthProvinceTextViewProfile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="40dp"
+                android:layout_marginBottom="5dp"
+                android:text="* Provincia:"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/BirthProvinceProfile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="60dp"
+                android:layout_marginBottom="5dp"
+                android:text=""
+                android:textSize="20sp"
+                android:textStyle="italic" />
+
+            <TextView
+                android:id="@+id/BirthCityTextViewProfile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="40dp"
+                android:layout_marginBottom="5dp"
+                android:text="* Città"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/BirthCityProfile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="60dp"
+                android:layout_marginBottom="5dp"
+                android:text=""
+                android:textSize="20sp"
+                android:textStyle="italic" />
+
+            <TextView
                 android:id="@+id/ResidenceTextViewProfile"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -188,25 +246,6 @@
 
             <TextView
                 android:id="@+id/ResidenceNationProfile"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="60dp"
-                android:layout_marginBottom="5dp"
-                android:text=""
-                android:textSize="20sp"
-                android:textStyle="italic" />
-
-            <TextView
-                android:id="@+id/ResidenceRegionTextViewProfile"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="40dp"
-                android:layout_marginBottom="5dp"
-                android:text="* Regione:"
-                android:textSize="20sp" />
-
-            <TextView
-                android:id="@+id/ResidenceRegionProfile"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="60dp"

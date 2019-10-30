@@ -20,12 +20,11 @@
 
     <Button
         android:id="@+id/LoginButtonHome"
-        android:layout_width="80dp"
+        android:layout_width="wrap_content"
         android:layout_height="40dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="10dp"
         android:background="@android:color/transparent"
-        android:text="Login"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -59,52 +58,12 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/TextViewHome">
 
-        <LinearLayout
-            android:id="@+id/LinearLayoutHome"
+        <GridView
+            android:id="@+id/GridViewHome"
+            android:numColumns="1"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_height="match_parent" />
 
-            <ImageButton
-                android:id="@+id/imageButtonHome"
-                android:layout_width="400dp"
-                android:layout_height="225dp"
-                tools:layout_editor_absoluteX="175dp"
-                tools:layout_editor_absoluteY="48dp"
-                tools:srcCompat="@tools:sample/avatars" />
-
-            <ImageButton
-                android:id="@+id/imageButtonHome2"
-                android:layout_width="400dp"
-                android:layout_height="225dp"
-                tools:layout_editor_absoluteX="270dp"
-                tools:layout_editor_absoluteY="1dp"
-                tools:srcCompat="@tools:sample/avatars" />
-
-            <ImageButton
-                android:id="@+id/imageButtonHome3"
-                android:layout_width="400dp"
-                android:layout_height="225dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/imageButtonHome4"
-                app:layout_constraintVertical_bias="1.0"
-                tools:srcCompat="@tools:sample/avatars" />
-
-            <ImageButton
-                android:id="@+id/imageButtonHome4"
-                android:layout_width="400dp"
-                android:layout_height="225dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.092"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.083"
-                tools:srcCompat="@tools:sample/avatars" />
-
-        </LinearLayout>
     </ScrollView>
 
     <View

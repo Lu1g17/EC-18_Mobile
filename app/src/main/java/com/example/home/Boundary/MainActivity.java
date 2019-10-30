@@ -3,9 +3,11 @@ package com.example.home.Boundary;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.os.Bundle;
+import android.widget.GridView;
 import android.widget.ImageButton;
 
 import com.amazonaws.auth.AWSCredentialsProvider;
@@ -14,11 +16,15 @@ import com.amazonaws.mobile.config.AWSConfiguration;
 
 import com.amazonaws.mobileconnectors.dynamodbv2.dynamodbmapper.DynamoDBMapper;
 import com.amazonaws.services.dynamodbv2.AmazonDynamoDBClient;
+import com.example.home.Control.ArticleControl;
 import com.example.home.Entity.ArticleEntity;
+import com.example.home.Entity.ClientEntity;
 import com.example.home.R;
 
+import java.util.ArrayList;
+
 public class MainActivity extends AppCompatActivity {
-    //static boolean autenticato = false;
+    public static ClientEntity autenticazione = null;
     public static DynamoDBMapper dynamoDBMapper;
 
     @Override
@@ -32,12 +38,24 @@ public class MainActivity extends AppCompatActivity {
         ImageButton shoppingCart = findViewById(R.id.imageButtonShoppingCart);
         ImageButton menu = findViewById(R.id.imageButtonMenu);
 
+        if (autenticazione == null) {
+            loginButton.setText("LOGIN");
+        } else {
+            loginButton.setText(autenticazione.getName());
+        }
+
         loginButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                Intent login = new Intent(MainActivity.this, Login.class);
+                if (autenticazione == null) {
+                    Intent login = new Intent(MainActivity.this, Login.class);
 
-                startActivity(login);
+                    startActivity(login);
+                } else {
+                    Intent profilo = new Intent(MainActivity.this, Profile.class);
+
+                    startActivity(profilo);
+                }
             }
 
         });
@@ -83,10 +101,17 @@ public class MainActivity extends AppCompatActivity {
         });
 
         initConnectionDatabase();
+        refresh();
+    }
+
+    public void refresh() {
+        ArrayList<ArticleEntity> articoli = new ArticleControl().getForegroundList();
+        ArticleListAdapter adapter = new ArticleListAdapter(MainActivity.this, R.layout.image_layout, articoli);
+        GridView view = (GridView) findViewById(R.id.GridViewHome);
+        view.setAdapter(adapter);
     }
 
     public void initConnectionDatabase() {
-
         AWSMobileClient.getInstance().initialize(this).execute();
 
         AWSCredentialsProvider credentialsProvider = AWSMobileClient.getInstance().getCredentialsProvider();

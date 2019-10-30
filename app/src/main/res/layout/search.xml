@@ -17,7 +17,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/SectionTextViewSearch"
+        android:id="@+id/SectionSearchEditTextSearch"
         android:layout_width="130dp"
         android:layout_height="40dp"
         android:layout_marginStart="10dp"
@@ -38,13 +38,13 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/TextViewSearch"
+        android:id="@+id/SearchEditTextSearch"
         android:layout_width="360dp"
         android:layout_height="40dp"
         android:layout_marginTop="5dp"
         android:autofillHints=""
         android:inputType="text"
-        android:text="Ricerca"
+        android:text=""
         android:textAlignment="center"
         android:textAllCaps="false"
         android:textColor="@android:color/black"
@@ -63,113 +63,13 @@
         app:layout_constraintBottom_toTopOf="@+id/BottomDividerSearch"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/TextViewSearch">
+        app:layout_constraintTop_toBottomOf="@id/SearchEditTextSearch">
 
-        <TableLayout
-            android:id="@+id/TableLayoutSearch"
+        <GridView
+            android:id="@+id/GridViewSearch"
+            android:numColumns="2"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <TableRow android:id="@+id/TableRowSearch">
-
-                <include
-                    android:id="@+id/LeftImageContainerSearch1"
-                    layout="@layout/image_layout"
-                    android:layout_width="200dp"
-                    android:layout_height="200dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginEnd="5dp" />
-
-                <include
-                    android:id="@+id/RightImageContainerSearch1"
-                    layout="@layout/image_layout"
-                    android:layout_width="200dp"
-                    android:layout_height="200dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginEnd="5dp" />
-
-            </TableRow>
-
-            <TableRow android:id="@+id/TableRowSearch2">
-
-                <include
-                    android:id="@+id/LeftImageContainerSearch2"
-                    layout="@layout/image_layout"
-                    android:layout_width="200dp"
-                    android:layout_height="200dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginEnd="5dp" />
-
-                <include
-                    android:id="@+id/RightImageContainerSearch2"
-                    layout="@layout/image_layout"
-                    android:layout_width="200dp"
-                    android:layout_height="200dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginEnd="5dp" />
-
-            </TableRow>
-
-            <TableRow android:id="@+id/TableRowSearch3">
-
-                <include
-                    android:id="@+id/LeftImageContainerSearch3"
-                    layout="@layout/image_layout"
-                    android:layout_width="200dp"
-                    android:layout_height="200dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginEnd="5dp" />
-
-                <include
-                    android:id="@+id/RightImageContainerSearch3"
-                    layout="@layout/image_layout"
-                    android:layout_width="200dp"
-                    android:layout_height="200dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginEnd="5dp" />
-
-            </TableRow>
-
-            <TableRow android:id="@+id/TableRowSearch4">
-
-                <include
-                    android:id="@+id/LeftImageContainerSearch4"
-                    layout="@layout/image_layout"
-                    android:layout_width="200dp"
-                    android:layout_height="200dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginEnd="5dp" />
-
-                <include
-                    android:id="@+id/RightImageContainerSearch4"
-                    layout="@layout/image_layout"
-                    android:layout_width="200dp"
-                    android:layout_height="200dp" />
-
-            </TableRow>
-
-            <TableRow android:id="@+id/TableRowSearch5">
-
-                <include
-                    android:id="@+id/LeftImageContainerSearch5"
-                    layout="@layout/image_layout"
-                    android:layout_width="200dp"
-                    android:layout_height="200dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginEnd="5dp" />
-
-                <include
-                    android:id="@+id/RightImageContainerSearch5"
-                    layout="@layout/image_layout"
-                    android:layout_width="200dp"
-                    android:layout_height="200dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginEnd="5dp" />
-
-            </TableRow>
-
-        </TableLayout>
+            android:layout_height="match_parent" />
     </ScrollView>
 
     <View

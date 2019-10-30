@@ -8,52 +8,69 @@
 
     <ImageView
         android:id="@+id/ImageViewCatalog"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toTopOf="@+id/NameTextViewCatalog"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        app:layout_constraintBottom_toTopOf="@+id/NameCatalog"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:srcCompat="@tools:sample/avatars" />
 
     <TextView
-        android:id="@+id/NameTextViewCatalog"
+        android:id="@+id/NameCatalog"
         android:layout_width="wrap_content"
         android:layout_height="20dp"
-        android:layout_marginBottom="1dp"
         android:gravity="center_horizontal"
         android:text="Title"
         android:textSize="18sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/BrandTextViewArticle"
+        app:layout_constraintBottom_toTopOf="@+id/BrandCatalog"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ImageViewCatalog" />
 
     <TextView
-        android:id="@+id/BrandTextViewCatalog"
+        android:id="@+id/BrandCatalog"
         android:layout_width="wrap_content"
         android:layout_height="20dp"
         android:gravity="center_horizontal"
         android:text="Brand"
         android:textSize="16sp"
         android:textStyle="italic"
-        app:layout_constraintBottom_toBottomOf="@id/PriceTextViewCatalog"
+        app:layout_constraintBottom_toTopOf="@+id/PriceTableRowCatalog"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/NameTextViewCatalog" />
+        app:layout_constraintStart_toStartOf="parent" />
 
-    <TextView
-        android:id="@+id/PriceTextViewCatalog"
+    <TableRow
+        android:id="@+id/PriceTableRowCatalog"
         android:layout_width="wrap_content"
-        android:layout_height="20dp"
-        android:gravity="center_horizontal"
-        android:text="Price"
-        android:textSize="16sp"
-        android:textStyle="italic"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/BrandTextViewCatalog" />
+        app:layout_constraintTop_toBottomOf="@+id/BrandCatalog">
+
+        <TextView
+            android:id="@+id/PriceCatalog"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:layout_marginRight="5dp"
+            android:text="Price"
+            android:textSize="16sp"
+            android:textStyle="italic"
+            app:layout_constraintEnd_toStartOf="@+id/PriceTextViewCatalog"
+            app:layout_constraintTop_toBottomOf="@+id/BrandCatalog" />
+
+        <TextView
+            android:id="@+id/PriceTextViewCatalog"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:text="€"
+            android:textSize="16sp"
+            android:textStyle="italic"
+            app:layout_constraintStart_toEndOf="@+id/PriceCatalog"
+            app:layout_constraintTop_toBottomOf="@+id/BrandCatalog" />
+
+    </TableRow>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

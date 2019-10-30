@@ -1,22 +1,33 @@
 package com.example.home.Entity;
 
+import android.accounts.Account;
+
 import com.amazonaws.mobileconnectors.dynamodbv2.dynamodbmapper.DynamoDBAttribute;
 import com.amazonaws.mobileconnectors.dynamodbv2.dynamodbmapper.DynamoDBHashKey;
+import com.amazonaws.mobileconnectors.dynamodbv2.dynamodbmapper.DynamoDBScanExpression;
 import com.amazonaws.mobileconnectors.dynamodbv2.dynamodbmapper.DynamoDBTable;
+import com.amazonaws.services.dynamodbv2.model.AttributeValue;
+import com.example.home.RequiredFieldsException;
+
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
+
+import static com.example.home.Boundary.MainActivity.dynamoDBMapper;
 
 @DynamoDBTable(tableName = "User")
-//@DynamoDBTable(tableName = "Account")
-
 public class ClientEntity {
 
-    private String fiscalCode, gender, name, surname, email, password, birthDate, birthNation, birthProvince, birthCity, residenceNation, residenceRegion, residenceProvince, residenceCity, residenceCAP, residenceAddress, shippingNation, shippingRegion, shippingProvince, shippingCity, shippingCAP, shippingAddress;
+    public AccountEntity account;
+    private String email, password, fiscalCode, gender, name, surname, birthDate, birthNation, birthProvince, birthCity, residenceNation, residenceRegion, residenceProvince, residenceCity, residenceCAP, residenceAddress, shippingNation, shippingRegion, shippingProvince, shippingCity, shippingCAP, shippingAddress;
 
     public ClientEntity() {
+        account = new AccountEntity();
+
         gender = null;
         name = null;
         surname = null;
-        email = null;
-        password = null;
         birthDate = null;
         birthNation = null;
         birthProvince = null;
@@ -36,12 +47,12 @@ public class ClientEntity {
     }
 
     public ClientEntity(String fiscalCode, String gender, String name, String surname, String email, String password, String birthDate, String birthNation, String birthProvince, String birthCity, String residenceNation, String residenceRegion, String residenceProvince, String residenceCity, String residenceCAP, String residenceAddress, String shippingNation, String shippingRegion, String shippingProvince, String shippingCity, String shippingCAP, String shippingAddress) {
+        account = new AccountEntity(email, password);
+
         setFiscalCode(fiscalCode);
         setGender(gender);
         setName(name);
         setSurname(surname);
-        //setEmail(email);
-        //setPassword(password);
         setBirthDate(birthDate);
         setBirthNation(birthNation);
         setBirthProvince(birthProvince);
@@ -63,6 +74,7 @@ public class ClientEntity {
     public ClientEntity(String fiscalCode) {
         setFiscalCode(fiscalCode);
     }
+
 
     @DynamoDBAttribute(attributeName = "Gender")
     public String getGender() {
@@ -100,18 +112,6 @@ public class ClientEntity {
             this.surname = surname;
     }
 
-    /*@DynamoDBAttribute(attributeName = "Email") //E' un campo di account non di user
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        if (email == null)
-            this.email = "Non definito";
-        else
-            this.email = email;
-    }*/
-
     @DynamoDBAttribute(attributeName = "BirthDate")
     public String getBirthDate() {
         return birthDate;
@@ -123,18 +123,6 @@ public class ClientEntity {
         else
             this.birthDate = birthDate;
     }
-
-    /*@DynamoDBAttribute(attributeName = "Password") //E' un campo di account non di user
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        if (password == null)
-            this.password = "Non definito";
-        else
-            this.password = password;
-    }*/
 
     @DynamoDBHashKey(attributeName = "FiscalCode")
     @DynamoDBAttribute(attributeName = "FiscalCode")
@@ -395,4 +383,62 @@ public class ClientEntity {
 
         return false;
     }*/
+
+    private void checkFields() throws RequiredFieldsException {
+        if(account.getEmail() == null)
+            throw new RequiredFieldsException("Email");
+        if(account.getPassword() == null)
+            throw new RequiredFieldsException("Password");
+    }
+
+    public ClientEntity login() throws RequiredFieldsException {
+
+        try {
+            checkFields();
+
+            Map<String, String> names = new HashMap<String, String>();
+            names.put("#typ", "Type");
+
+            Map<String, AttributeValue> eav = new HashMap<String, AttributeValue>();
+            eav.put(":val1", new AttributeValue().withS(account.getEmail()));
+            eav.put(":val2", new AttributeValue().withS("User"));
+
+            DynamoDBScanExpression scanExpression = new DynamoDBScanExpression().withFilterExpression("Email = :val1 and #typ = :val2").withExpressionAttributeNames(names).withExpressionAttributeValues(eav);
+            List<AccountEntity> lista = dynamoDBMapper.parallelScan(AccountEntity.class, scanExpression, 16);
+
+            Iterator<AccountEntity> iteratore = lista.iterator();
+            if (iteratore.hasNext()) {
+                final AccountEntity accountResult = iteratore.next();
+
+                if (account.getPassword().equals(accountResult.getPassword())) {
+                    final ClientEntity[] client = new ClientEntity[1];
+
+                    Thread t = new Thread(new Runnable() {
+                        @Override
+                        public void run() {
+                            client[0] = dynamoDBMapper.load(ClientEntity.class, accountResult.getFiscalCode());
+                        }
+                    });
+
+                    t.start();
+
+                    try {
+                        t.join();
+                    } catch (Exception e) {}
+
+                    return client[0];
+                }
+            }
+        } catch (RequiredFieldsException re) {
+            System.err.println("Unable to check login because there are required fields not filled: ");
+            System.err.println(re.getField());
+
+            throw new RequiredFieldsException(re.getField());
+        } catch (Exception e) {
+            System.err.println("Unable to scan");
+            System.err.println(e.getMessage());
+        }
+
+        return null;
+    }
 }

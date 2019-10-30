@@ -5,10 +5,14 @@ import com.amazonaws.mobileconnectors.dynamodbv2.dynamodbmapper.DynamoDBHashKey;
 import com.amazonaws.mobileconnectors.dynamodbv2.dynamodbmapper.DynamoDBMapper;
 import com.amazonaws.mobileconnectors.dynamodbv2.dynamodbmapper.DynamoDBScanExpression;
 import com.amazonaws.mobileconnectors.dynamodbv2.dynamodbmapper.DynamoDBTable;
+import com.amazonaws.services.dynamodbv2.model.AttributeValue;
+import com.example.home.Boundary.Article;
 import com.example.home.RequiredFieldsException;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.jar.JarEntry;
 
 import static com.example.home.Boundary.MainActivity.dynamoDBMapper;
@@ -288,40 +292,26 @@ public class ArticleEntity {
         return false;
     }*/
 
-    /*public ArticleEntity read() {
-        Table table = dynamoDB.getTable("Article");
+    public ArticleEntity read() {
+        final ArticleEntity[] article = new ArticleEntity[1];
+
+        Thread t = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                article[0] = dynamoDBMapper.load(ArticleEntity.class, code);
+            }
+        });
+
+        t.start();
 
         try {
-            GetItemSpec spec = new GetItemSpec().withPrimaryKey("Code", this.code);
-
-            System.out.println("Attempting to read the item...");
-            Item outcome = table.getItem(spec);
-            System.out.println("GetItem succeeded: " + outcome);
-
-            this.code = outcome.getString("Code");
-            this.gender = outcome.getString("Gender");
-            this.name = outcome.getString("Title");
-            this.brand = outcome.getString("Brand");
-            this.category = outcome.getString("Category");
-            this.type = outcome.getString("Typology");
-            this.size = outcome.getString("Size");
-            this.price = outcome.getFloat("Price");
-            this.quantity = outcome.getString("Quantity");
-            this.color = outcome.getString("Color");
-            this.fit = outcome.getString("Fit");
-            this.composition = outcome.getString("Composition");
-            this.warnings = outcome.getString("Warnings");
-            this.description = outcome.getString("Description");
-            this.attached = outcome.getString("Attached");
-
-            return this;
+            t.join();
         } catch (Exception e) {
-            System.err.println("Unable to read item: " + this.code);
-            System.err.println(e.getMessage());
+
         }
 
-        return null;
-    }*/
+        return article[0];
+    }
 
     /*public boolean update() throws RequiredFieldsException {
         Table table = dynamoDB.getTable("Article");
@@ -370,10 +360,55 @@ public class ArticleEntity {
         return false;
     }*/
 
+    public ArrayList<ArticleEntity> getForegroundList() {
+        final ArrayList<ArticleEntity> lista = new ArrayList<ArticleEntity>();
+
+        Float price = new Float(80.0);
+
+        Map<String, AttributeValue> eav = new HashMap<String, AttributeValue>();
+        eav.put(":val1", new AttributeValue().withN(Float.toString(price)));
+
+        DynamoDBScanExpression scanExpression = new DynamoDBScanExpression().withFilterExpression("Price < :val1").withExpressionAttributeValues(eav);
+        List<ArticleEntity> li = dynamoDBMapper.parallelScan(ArticleEntity.class, scanExpression, 16);
+
+        lista.addAll(li);
+
+        return lista;
+    }
+
     public ArrayList<ArticleEntity> getList() {
         final ArrayList<ArticleEntity> lista = new ArrayList<ArticleEntity>();
 
         DynamoDBScanExpression scanExpression = new DynamoDBScanExpression();
+        List<ArticleEntity> li = dynamoDBMapper.parallelScan(ArticleEntity.class, scanExpression, 16);
+
+        lista.addAll(li);
+
+        return lista;
+    }
+
+    public ArrayList<ArticleEntity> getList(String name) {
+        final ArrayList<ArticleEntity> lista = new ArrayList<ArticleEntity>();
+
+        Map<String, AttributeValue> eav = new HashMap<String, AttributeValue>();
+        eav.put(":val1", new AttributeValue().withS(name));
+
+        DynamoDBScanExpression scanExpression = new DynamoDBScanExpression().withFilterExpression("Title = :val1").withExpressionAttributeValues(eav);
+        List<ArticleEntity> li = dynamoDBMapper.parallelScan(ArticleEntity.class, scanExpression, 16);
+
+        lista.addAll(li);
+
+        return lista;
+    }
+
+    public ArrayList<ArticleEntity> getList(String gender, String catgeory) {
+        final ArrayList<ArticleEntity> lista = new ArrayList<ArticleEntity>();
+
+        Map<String, AttributeValue> eav = new HashMap<String, AttributeValue>();
+        eav.put(":val1", new AttributeValue().withS(gender));
+        eav.put(":val2", new AttributeValue().withS(catgeory));
+
+        DynamoDBScanExpression scanExpression = new DynamoDBScanExpression().withFilterExpression("Gender = :val1 and Category = :val2").withExpressionAttributeValues(eav);
         List<ArticleEntity> li = dynamoDBMapper.parallelScan(ArticleEntity.class, scanExpression, 16);
 
         lista.addAll(li);

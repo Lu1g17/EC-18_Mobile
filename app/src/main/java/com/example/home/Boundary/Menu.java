@@ -11,6 +11,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.home.R;
 
+import static com.example.home.Boundary.MainActivity.autenticazione;
+
 public class Menu extends AppCompatActivity {
 
     @Override
@@ -25,12 +27,24 @@ public class Menu extends AppCompatActivity {
         ImageButton shoppingCart = findViewById(R.id.imageButtonShoppingCart);
         TextView profile = findViewById(R.id.ProfileTextViewMenu);
 
+        if (autenticazione == null) {
+            loginButton.setText("LOGIN");
+        } else {
+            loginButton.setText(autenticazione.getName());
+        }
+
         loginButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                Intent login = new Intent(Menu.this, Login.class);
+                if (autenticazione == null) {
+                    Intent login = new Intent(Menu.this, Login.class);
 
-                startActivity(login);
+                    startActivity(login);
+                } else {
+                    Intent profilo = new Intent(Menu.this, Profile.class);
+
+                    startActivity(profilo);
+                }
             }
 
         });

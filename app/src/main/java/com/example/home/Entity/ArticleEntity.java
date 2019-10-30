@@ -373,15 +373,10 @@ public class ArticleEntity {
     public ArrayList<ArticleEntity> getList() {
         final ArrayList<ArticleEntity> lista = new ArrayList<ArticleEntity>();
 
-        //new Thread(new Runnable() {
-          //  @Override
-            //public void run() {
-            DynamoDBScanExpression scanExpression = new DynamoDBScanExpression();
-            List<ArticleEntity> li = dynamoDBMapper.parallelScan(ArticleEntity.class, scanExpression, 16);
+        DynamoDBScanExpression scanExpression = new DynamoDBScanExpression();
+        List<ArticleEntity> li = dynamoDBMapper.parallelScan(ArticleEntity.class, scanExpression, 16);
 
-            lista.addAll(li);
-            //}
-        //}).start();
+        lista.addAll(li);
 
         return lista;
     }

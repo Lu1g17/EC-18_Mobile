@@ -1,28 +1,23 @@
 package com.example.home.Boundary;
 
 import android.content.Context;
-import android.media.Image;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import androidx.annotation.NonNull;
-
-import com.bumptech.glide.Glide;
 import com.example.home.Entity.ArticleEntity;
 import com.example.home.R;
-
 import java.util.ArrayList;
+import com.squareup.picasso.Picasso;
 
 public class ArticleListAdapter extends ArrayAdapter<ArticleEntity> {
 
     private Context context;
     private int resource;
     private ArrayList<ArticleEntity> lista;
-    private ImageView image;
 
     private static class Layout {
         TextView name;
@@ -31,13 +26,12 @@ public class ArticleListAdapter extends ArrayAdapter<ArticleEntity> {
         ImageView attached;
     }
 
-    public ArticleListAdapter(Context context, int resource, ArrayList<ArticleEntity> lista, ImageView image){
+    public ArticleListAdapter(Context context, int resource, ArrayList<ArticleEntity> lista){
         super(context, resource, lista);
 
         this.context = context;
         this.resource = resource;
         this.lista = lista;
-        this.image = image;
     }
 
     @NonNull
@@ -48,6 +42,8 @@ public class ArticleListAdapter extends ArrayAdapter<ArticleEntity> {
         Float price = getItem(position).getPrice();
         String attached = getItem(position).getAttached();
 
+        if (attached != null) System.out.println("\nURL VALIDO> \n" + attached);
+
         Layout viewHolder;
         if (convertView == null) {
             LayoutInflater inflater = LayoutInflater.from(context);
@@ -57,7 +53,7 @@ public class ArticleListAdapter extends ArrayAdapter<ArticleEntity> {
             viewHolder.name = (TextView)convertView.findViewById(R.id.NameTextViewCatalog);
             viewHolder.brand = (TextView)convertView.findViewById(R.id.BrandTextViewCatalog);
             viewHolder.price = (TextView)convertView.findViewById(R.id.PriceTextViewCatalog);
-            viewHolder.attached = image;
+            viewHolder.attached = (ImageView) convertView.findViewById(R.id.ImageViewCatalog);
 
             convertView.setTag(viewHolder);
         } else {
@@ -67,7 +63,8 @@ public class ArticleListAdapter extends ArrayAdapter<ArticleEntity> {
         viewHolder.name.setText(name);
         viewHolder.brand.setText(brand);
         viewHolder.price.setText(String.valueOf(price));
-        Glide.with(context).load(attached).into(viewHolder.attached);
+        Picasso.with(context).load(attached).into(viewHolder.attached);
+        //Glide.with(context).load(attached).into(viewHolder.attached);
 
         return convertView;
     }

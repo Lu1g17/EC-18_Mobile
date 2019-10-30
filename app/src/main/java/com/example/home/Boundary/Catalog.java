@@ -25,8 +25,6 @@ public class Catalog extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.catalog);
-
-        ImageView image = findViewById(R.id.ImageViewCatalog);
         
         Button loginButton = findViewById(R.id.LoginButtonCatalog);
         ImageButton homeButton = findViewById(R.id.imageButtonHome);
@@ -85,17 +83,7 @@ public class Catalog extends AppCompatActivity {
         });
 
         ArrayList<ArticleEntity> articoli = new ArticleControl().getList();
-
-        if (articoli != null)
-            System.out.println("\nNON NULL\n");
-        else
-            System.out.println("\nNULL\n");
-
-        for (ArticleEntity article : articoli) {
-            System.out.println("QUESTO È L'ITEM CON CODICE: " + article.getCode() + ": >" + article.getBrand());
-        }
-
-        ArticleListAdapter adapter = new ArticleListAdapter(Catalog.this, R.layout.image_layout, articoli, image);
+        ArticleListAdapter adapter = new ArticleListAdapter(Catalog.this, R.layout.image_layout, articoli);
         GridView view = (GridView) findViewById(R.id.GridViewCatalog);
         view.setAdapter(adapter);
     }

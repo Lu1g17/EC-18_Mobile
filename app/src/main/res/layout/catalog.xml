@@ -235,8 +235,6 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-
-
         </GridView>
 
     </ScrollView>

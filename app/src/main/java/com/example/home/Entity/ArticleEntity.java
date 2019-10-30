@@ -9,8 +9,10 @@ import com.example.home.RequiredFieldsException;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.jar.JarEntry;
 
 import static com.example.home.Boundary.MainActivity.dynamoDBMapper;
+import static java.lang.Thread.sleep;
 
 @DynamoDBTable(tableName = "Article")
 public class ArticleEntity {
@@ -371,15 +373,15 @@ public class ArticleEntity {
     public ArrayList<ArticleEntity> getList() {
         final ArrayList<ArticleEntity> lista = new ArrayList<ArticleEntity>();
 
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                DynamoDBScanExpression scanExpression = new DynamoDBScanExpression();
-                List<ArticleEntity> li = dynamoDBMapper.parallelScan(ArticleEntity.class, scanExpression, 16);
+        //new Thread(new Runnable() {
+          //  @Override
+            //public void run() {
+            DynamoDBScanExpression scanExpression = new DynamoDBScanExpression();
+            List<ArticleEntity> li = dynamoDBMapper.parallelScan(ArticleEntity.class, scanExpression, 16);
 
-                lista.addAll(li);
-            }
-        }).start();
+            lista.addAll(li);
+            //}
+        //}).start();
 
         return lista;
     }

@@ -6,12 +6,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 
+import com.example.home.Entity.ShoppingCartEntity;
 import com.example.home.Entity.ShoppingCartEntity;
 import com.example.home.R;
 import com.squareup.picasso.Picasso;
@@ -29,7 +31,7 @@ public class ShoppingListAdapter extends ArrayAdapter<ShoppingCartEntity> {
     private static class Layout {
         TextView name;
         TextView price;
-        Spinner quantity;
+        EditText quantity;
     }
 
     public ShoppingListAdapter(Context context, int resource, ArrayList<ShoppingCartEntity> lista) {
@@ -45,8 +47,8 @@ public class ShoppingListAdapter extends ArrayAdapter<ShoppingCartEntity> {
     public View getView(int position, View convertView, ViewGroup parent) {
         String name = getItem(position).getName();
         Float price = getItem(position).getPrice();
-        String quantity = getItem(position).getQuantity();
-        code = getItem(position).getCode();
+        Integer quantity = getItem(position).getQuantity();
+        code = getItem(position).getArticleCode();
 
         Layout viewHolder;
         if (convertView == null) {
@@ -55,7 +57,7 @@ public class ShoppingListAdapter extends ArrayAdapter<ShoppingCartEntity> {
 
             viewHolder = new Layout();
             viewHolder.name = (TextView) convertView.findViewById(R.id.NameShopping);
-            viewHolder.quantity = (TextView) convertView.findViewById(R.id.QuantityShopping);
+            viewHolder.quantity =  convertView.findViewById(R.id.Shoppingcartnumber);
             viewHolder.price = (TextView) convertView.findViewById(R.id.PriceShopping);
 
             convertView.setTag(viewHolder);

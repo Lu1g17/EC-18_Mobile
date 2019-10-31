@@ -6,6 +6,7 @@ import com.amazonaws.mobileconnectors.dynamodbv2.dynamodbmapper.DynamoDBRangeKey
 import com.amazonaws.mobileconnectors.dynamodbv2.dynamodbmapper.DynamoDBScanExpression;
 import com.amazonaws.mobileconnectors.dynamodbv2.dynamodbmapper.DynamoDBTable;
 import com.amazonaws.services.dynamodbv2.model.AttributeValue;
+import com.example.home.Boundary.ShoppingCart;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -18,18 +19,24 @@ import static com.example.home.Boundary.MainActivity.dynamoDBMapper;
 @DynamoDBTable(tableName = "ShoppingCart")
 public class ShoppingCartEntity {
 
-    private String fiscalCode, articleCode;
+    private String fiscalCode;
+    private String articleCode;
+    private String nome;
+    Float prezzo;
     private Integer quantity = new Integer(1);
-
 
     public ShoppingCartEntity() {
         this.fiscalCode = null;
         this.articleCode = null;
+        this.nome = null;
+        this.prezzo = null;
     }
 
-    public ShoppingCartEntity(String fiscalCode, String articleCode) {
+    public ShoppingCartEntity(String fiscalCode, String articleCode, String nome, Float prezzo) {
         this.fiscalCode = fiscalCode;
         this.articleCode = articleCode;
+        this.nome = nome;
+        this.prezzo = prezzo;
     }
 
     @DynamoDBHashKey(attributeName = "FiscalCode")
@@ -59,8 +66,26 @@ public class ShoppingCartEntity {
         this.quantity = quantity;
     }
 
+    @DynamoDBAttribute(attributeName = "Name")
+    public String getName() {
+        return nome;
+    }
+
+    public void setName(Integer quantity) {
+        this.nome = nome;
+    }
+
+    @DynamoDBAttribute(attributeName = "Name")
+    public Float getPrice() {
+        return prezzo;
+    }
+
+    public void setPrice(Integer quantity) {
+        this.prezzo = prezzo;
+    }
+
     public ShoppingCartEntity clone() {
-        ShoppingCartEntity clone = new ShoppingCartEntity(this.fiscalCode, this.articleCode);
+        ShoppingCartEntity clone = new ShoppingCartEntity(this.fiscalCode, this.articleCode, this.nome, this.prezzo);
 
         return clone;
     }
@@ -102,14 +127,14 @@ public class ShoppingCartEntity {
         }
     }
 
-    public ArrayList<ArticleEntity> getList(String fiscalCode) {
-        final ArrayList<ArticleEntity> lista = new ArrayList<ArticleEntity>();
+    public ArrayList<ShoppingCartEntity> getList(String fiscalCode) {
+        final ArrayList<ShoppingCartEntity> lista = new ArrayList<ShoppingCartEntity>();
 
         Map<String, AttributeValue> eav = new HashMap<String, AttributeValue>();
         eav.put(":val1", new AttributeValue().withS(fiscalCode));
 
         DynamoDBScanExpression scanExpression = new DynamoDBScanExpression().withFilterExpression("FiscalCode = :val1").withExpressionAttributeValues(eav);
-        List<ArticleEntity> li = dynamoDBMapper.parallelScan(ArticleEntity.class, scanExpression, 16);
+        List<ShoppingCartEntity> li = dynamoDBMapper.parallelScan(ShoppingCartEntity.class, scanExpression, 16);
 
         lista.addAll(li);
 

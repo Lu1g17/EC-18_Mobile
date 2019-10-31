@@ -11,7 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.home.Control.ArticleControl;
 import com.example.home.Control.ShoppingCartControl;
-import com.example.home.Entity.ArticleEntity;
+import com.example.home.Entity.ShoppingCartEntity;
 import com.example.home.Entity.ShoppingCartEntity;
 import com.example.home.R;
 
@@ -94,10 +94,12 @@ public class ShoppingCart extends AppCompatActivity {
 
         });
 
-        ArrayList<ArticleEntity> articoli = new ShoppingCartControl().getList(autenticazione.getFiscalCode());
-        ArticleListAdapter adapter = new ArticleListAdapter(ShoppingCart.this, R.layout.shoppingcart_layout, articoli);
-        GridView view = (GridView) findViewById(R.id.GridViewShoppingCart);
-        view.setAdapter(adapter);
+        if (autenticazione != null) {
+            ArrayList<ShoppingCartEntity> articoli = new ShoppingCartControl().getList(autenticazione.getFiscalCode());
+            ShoppingListAdapter adapter = new ShoppingListAdapter(ShoppingCart.this, R.layout.shoppingcart_layout, articoli);
+            GridView view = (GridView) findViewById(R.id.GridViewShoppingCart);
+            view.setAdapter(adapter);
+        }
     }
 
 }

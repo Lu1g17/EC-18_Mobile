@@ -40,6 +40,7 @@ public class Article extends AppCompatActivity {
         TextView composition = (TextView) findViewById(R.id.CompositionArticle);
         TextView warnings = (TextView) findViewById(R.id.WarningsArticle);
         TextView description = (TextView) findViewById(R.id.DescriptionArticle);
+        ImageView add = findViewById(R.id.AddShoppingCartImageViewArticle); //settare il bottone per add
 
         Picasso.with(this).load(article.getAttached()).into(attached);
         code.setText(article.getCode());
@@ -56,6 +57,8 @@ public class Article extends AppCompatActivity {
         composition.setText(article.getComposition());
         warnings.setText(article.getWarnings());
         description.setText(article.getDescription());
+
+        add.setOnClickListener();
     }
 }
 

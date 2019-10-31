@@ -313,53 +313,6 @@ public class ArticleEntity {
         return article[0];
     }
 
-    /*public boolean update() throws RequiredFieldsException {
-        Table table = dynamoDB.getTable("Article");
-
-        try {
-            checkRequiredFields();
-
-            UpdateItemSpec updateItemSpec = new UpdateItemSpec().withPrimaryKey("Code", code)
-                    .withUpdateExpression("set Gender = :g, Title = :t, Brand = :b, Price = :p, Category = :c, Typology = :ty, Size = :s, Quantity = :q, Color = :co, Fit = :f, Composition = :com, Warnings = :w, Description = :d, Attached = :a")
-                    .withValueMap(new ValueMap().withString(":g", gender).withString(":t", name).withString(":b", brand).withNumber(":p", price).withString(":c", category).withString(":ty", type).withString(":s", size).withString(":q", quantity).withString(":co", color).withString(":f", fit).withString(":com", composition).withString(":w", warnings).withString(":d", description).withString(":a", attached)).withReturnValues(ReturnValue.UPDATED_NEW);
-
-            System.out.println("Updating the item...");
-            UpdateItemOutcome outcome = table.updateItem(updateItemSpec);
-            System.out.println("UpdateItem succeeded:\n" + outcome.getItem().toJSONPretty());
-
-            return true;
-        } catch (RequiredFieldsException re) {
-            System.err.println("Unable to add item " + code + " because there are required fields not filled: ");
-            System.err.println(re.getMessage());
-
-            throw new RequiredFieldsException(re.getField());
-        } catch (Exception e) {
-            System.err.println("Unable to update item: " + code);
-            System.err.println(e.getMessage());
-        }
-
-        return false;
-    }*/
-
-    /*public boolean delete() {
-        Table table = dynamoDB.getTable("Article");
-
-        try {
-            DeleteItemSpec deleteItemSpec = new DeleteItemSpec().withPrimaryKey("Code", code);
-
-            System.out.println("Attempting article conditional delete...");
-            DeleteItemOutcome outcome = table.deleteItem(deleteItemSpec);
-            System.out.println("DeleteItem succeeded");
-
-            return true;
-        } catch (Exception e) {
-            System.err.println("Unable to delete item: " + code);
-            System.err.println(e.getMessage());
-        }
-
-        return false;
-    }*/
-
     public ArrayList<ArticleEntity> getForegroundList() {
         final ArrayList<ArticleEntity> lista = new ArrayList<ArticleEntity>();
 

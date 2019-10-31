@@ -48,6 +48,12 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/TopDividerShoppingCart">
 
+        <GridView
+            android:id="@+id/GridViewShoppingCart"
+            android:numColumns="1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
     </ScrollView>
 
     <View

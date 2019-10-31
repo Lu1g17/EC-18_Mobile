@@ -4,11 +4,18 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.GridView;
 import android.widget.ImageButton;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.home.Control.ArticleControl;
+import com.example.home.Control.ShoppingCartControl;
+import com.example.home.Entity.ArticleEntity;
+import com.example.home.Entity.ShoppingCartEntity;
 import com.example.home.R;
+
+import java.util.ArrayList;
 
 import static com.example.home.Boundary.MainActivity.autenticazione;
 
@@ -86,6 +93,11 @@ public class ShoppingCart extends AppCompatActivity {
             }
 
         });
+
+        ArrayList<ArticleEntity> articoli = new ShoppingCartControl().getList(autenticazione.getFiscalCode());
+        ArticleListAdapter adapter = new ArticleListAdapter(ShoppingCart.this, R.layout.shoppingcart_layout, articoli);
+        GridView view = (GridView) findViewById(R.id.GridViewShoppingCart);
+        view.setAdapter(adapter);
     }
 
 }

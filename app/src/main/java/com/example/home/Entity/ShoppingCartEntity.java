@@ -7,6 +7,7 @@ import com.amazonaws.mobileconnectors.dynamodbv2.dynamodbmapper.DynamoDBScanExpr
 import com.amazonaws.mobileconnectors.dynamodbv2.dynamodbmapper.DynamoDBTable;
 import com.amazonaws.services.dynamodbv2.model.AttributeValue;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
@@ -20,6 +21,11 @@ public class ShoppingCartEntity {
     private String fiscalCode, articleCode;
     private Integer quantity = new Integer(1);
 
+
+    public ShoppingCartEntity() {
+        this.fiscalCode = null;
+        this.articleCode = null;
+    }
 
     public ShoppingCartEntity(String fiscalCode, String articleCode) {
         this.fiscalCode = fiscalCode;
@@ -94,5 +100,19 @@ public class ShoppingCartEntity {
         } catch (Exception e) {
             return false;
         }
+    }
+
+    public ArrayList<ArticleEntity> getList(String fiscalCode) {
+        final ArrayList<ArticleEntity> lista = new ArrayList<ArticleEntity>();
+
+        Map<String, AttributeValue> eav = new HashMap<String, AttributeValue>();
+        eav.put(":val1", new AttributeValue().withS(fiscalCode));
+
+        DynamoDBScanExpression scanExpression = new DynamoDBScanExpression().withFilterExpression("FiscalCode = :val1").withExpressionAttributeValues(eav);
+        List<ArticleEntity> li = dynamoDBMapper.parallelScan(ArticleEntity.class, scanExpression, 16);
+
+        lista.addAll(li);
+
+        return lista;
     }
 }

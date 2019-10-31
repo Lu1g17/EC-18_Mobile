@@ -75,7 +75,7 @@ public class Article extends AppCompatActivity {
         add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (new ShoppingCartControl().add(autenticazione.getFiscalCode(), article.getCode()) == true) {
+                if (new ShoppingCartControl().add(autenticazione.getFiscalCode(), article.getCode(), article.getName(), article.getPrice()) == true) {
                     AlertDialog alertDialog = new AlertDialog.Builder(Article.this).create();
                     alertDialog.setTitle("Avviso");
                     alertDialog.setMessage("L'articolo è stato aggiunto al carrello");

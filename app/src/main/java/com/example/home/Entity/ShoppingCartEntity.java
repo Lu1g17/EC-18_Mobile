@@ -17,11 +17,12 @@ import static com.example.home.Boundary.MainActivity.dynamoDBMapper;
 @DynamoDBTable(tableName = "ShoppingCart")
 public class ShoppingCartEntity {
 
-    private String fiscalCode, articleCode;
+    private String fiscalCode, articleCode,nome;
+    Float prezzo;
     private Integer quantity = new Integer(1);
 
 
-    public ShoppingCartEntity(String fiscalCode, String articleCode) {
+    public ShoppingCartEntity(String fiscalCode, String articleCode, String nome, Float prezzo) {
         this.fiscalCode = fiscalCode;
         this.articleCode = articleCode;
     }
@@ -53,8 +54,26 @@ public class ShoppingCartEntity {
         this.quantity = quantity;
     }
 
+    @DynamoDBAttribute(attributeName = "Name")
+    public String getName() {
+        return nome;
+    }
+
+    public void setName(Integer quantity) {
+        this.nome = nome;
+    }
+
+    @DynamoDBAttribute(attributeName = "Name")
+    public Float getPrice() {
+        return prezzo;
+    }
+
+    public void setPrice(Integer quantity) {
+        this.prezzo = prezzo;
+    }
+
     public ShoppingCartEntity clone() {
-        ShoppingCartEntity clone = new ShoppingCartEntity(this.fiscalCode, this.articleCode);
+        ShoppingCartEntity clone = new ShoppingCartEntity(this.fiscalCode, this.articleCode, this.nome,this.prezzo);
 
         return clone;
     }

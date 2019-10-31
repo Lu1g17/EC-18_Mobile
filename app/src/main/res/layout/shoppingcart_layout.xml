@@ -7,69 +7,69 @@
     android:layout_height="match_parent">
 
     <ImageView
-        android:id="@+id/ImageViewCatalog"
+        android:id="@+id/ImageViewShopping"
         android:layout_width="150dp"
         android:layout_height="150dp"
-        app:layout_constraintBottom_toTopOf="@+id/NameCatalog"
+        app:layout_constraintBottom_toTopOf="@+id/NameShopping"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:srcCompat="@tools:sample/avatars" />
 
     <TextView
-        android:id="@+id/NameCatalog"
+        android:id="@+id/NameShopping"
         android:layout_width="wrap_content"
         android:layout_height="20dp"
         android:gravity="center_horizontal"
         android:text="Title"
         android:textSize="18sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/BrandCatalog"
+        app:layout_constraintBottom_toTopOf="@+id/BrandShopping"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ImageViewCatalog" />
+        app:layout_constraintTop_toBottomOf="@+id/ImageViewShopping" />
 
     <TextView
-        android:id="@+id/BrandCatalog"
+        android:id="@+id/BrandShopping"
         android:layout_width="wrap_content"
         android:layout_height="20dp"
         android:gravity="center_horizontal"
         android:text="Brand"
         android:textSize="16sp"
         android:textStyle="italic"
-        app:layout_constraintBottom_toTopOf="@+id/PriceTableRowCatalog"
+        app:layout_constraintBottom_toTopOf="@+id/PriceTableRowShopping"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TableRow
-        android:id="@+id/PriceTableRowCatalog"
+        android:id="@+id/PriceTableRowShopping"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/BrandCatalog">
+        app:layout_constraintTop_toBottomOf="@+id/BrandShopping">
 
         <TextView
-            android:id="@+id/PriceCatalog"
+            android:id="@+id/PriceShopping"
             android:layout_width="wrap_content"
             android:layout_height="20dp"
             android:layout_marginRight="5dp"
             android:text="Price"
             android:textSize="16sp"
             android:textStyle="italic"
-            app:layout_constraintEnd_toStartOf="@+id/PriceTextViewCatalog"
-            app:layout_constraintTop_toBottomOf="@+id/BrandCatalog" />
+            app:layout_constraintEnd_toStartOf="@+id/PriceTextViewShopping"
+            app:layout_constraintTop_toBottomOf="@+id/BrandShopping" />
 
         <TextView
-            android:id="@+id/PriceTextViewCatalog"
+            android:id="@+id/PriceTextViewShopping"
             android:layout_width="wrap_content"
             android:layout_height="20dp"
             android:text="€"
             android:textSize="16sp"
             android:textStyle="italic"
-            app:layout_constraintStart_toEndOf="@+id/PriceCatalog"
-            app:layout_constraintTop_toBottomOf="@+id/BrandCatalog" />
+            app:layout_constraintStart_toEndOf="@+id/PriceShopping"
+            app:layout_constraintTop_toBottomOf="@+id/BrandShopping" />
 
     </TableRow>
 
@@ -80,7 +80,7 @@
         android:entries="@array/Numeroelementi"
         android:textAlignment="center"
         android:layout_gravity="center_horizontal"
-        app:layout_constraintTop_toBottomOf="@+id/PriceTableRowCatalog"
+        app:layout_constraintTop_toBottomOf="@+id/PriceTableRowShopping"
         app:layout_constraintStart_toEndOf="parent"
         />
 

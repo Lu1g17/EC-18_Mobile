@@ -2,7 +2,6 @@
     <string name="app_name">Home</string>
 
     <string-array name="Sesso">
-        <item>Sesso*</item>
         <item>Uomo</item>
         <item>Donna</item>
     </string-array>

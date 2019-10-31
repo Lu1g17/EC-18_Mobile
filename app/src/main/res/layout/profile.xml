@@ -2,7 +2,6 @@
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -70,7 +69,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="40dp"
                 android:layout_marginBottom="5dp"
-                android:text="* Nome:"
+                android:text="Nome:"
                 android:textSize="20sp" />
 
             <TextView
@@ -89,7 +88,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="40dp"
                 android:layout_marginBottom="5dp"
-                android:text="* Cognome:"
+                android:text="Cognome:"
                 android:textSize="20sp" />
 
             <TextView
@@ -108,7 +107,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="40dp"
                 android:layout_marginBottom="5dp"
-                android:text="* Sesso:"
+                android:text="Sesso:"
                 android:textSize="20sp" />
 
             <TextView
@@ -128,7 +127,7 @@
                 android:layout_marginStart="40dp"
                 android:layout_marginBottom="5dp"
                 android:inputType="date"
-                android:text="* Data di Nascita:"
+                android:text="Data di Nascita:"
                 android:textSize="20sp" />
 
             <TextView
@@ -147,7 +146,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="40dp"
                 android:layout_marginBottom="5dp"
-                android:text="* Codice Fiscale:"
+                android:text="Codice Fiscale:"
                 android:textSize="20sp" />
 
             <TextView
@@ -175,7 +174,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="40dp"
                 android:layout_marginBottom="5dp"
-                android:text="* Nazione:"
+                android:text="Nazione:"
                 android:textSize="20sp" />
 
             <TextView
@@ -194,7 +193,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="40dp"
                 android:layout_marginBottom="5dp"
-                android:text="* Provincia:"
+                android:text="Provincia:"
                 android:textSize="20sp" />
 
             <TextView
@@ -213,7 +212,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="40dp"
                 android:layout_marginBottom="5dp"
-                android:text="* Città"
+                android:text="Città"
                 android:textSize="20sp" />
 
             <TextView
@@ -241,11 +240,30 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="40dp"
                 android:layout_marginBottom="5dp"
-                android:text="* Nazione:"
+                android:text="Nazione:"
                 android:textSize="20sp" />
 
             <TextView
                 android:id="@+id/ResidenceNationProfile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="60dp"
+                android:layout_marginBottom="5dp"
+                android:text=""
+                android:textSize="20sp"
+                android:textStyle="italic" />
+
+            <TextView
+                android:id="@+id/ResidenceRegionTextViewProfile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="40dp"
+                android:layout_marginBottom="5dp"
+                android:text="Regione:"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/ResidenceRegionProfile"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="60dp"
@@ -260,7 +278,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="40dp"
                 android:layout_marginBottom="5dp"
-                android:text="* Provincia:"
+                android:text="Provincia:"
                 android:textSize="20sp" />
 
             <TextView
@@ -279,7 +297,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="40dp"
                 android:layout_marginBottom="5dp"
-                android:text="* Città"
+                android:text="Città"
                 android:textSize="20sp" />
 
             <TextView
@@ -298,7 +316,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="40dp"
                 android:layout_marginBottom="5dp"
-                android:text="* Indirizzo:"
+                android:text="Indirizzo:"
                 android:textSize="20sp" />
 
             <TextView
@@ -317,7 +335,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="40dp"
                 android:layout_marginBottom="5dp"
-                android:text="* CAP:"
+                android:text="CAP:"
                 android:textSize="20sp" />
 
             <TextView
@@ -378,7 +396,7 @@
                 android:textStyle="italic" />
 
             <TextView
-                android:id="@+id/ShippingProvinceProfile"
+                android:id="@+id/ShippingProvinceTextViewProfile"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="40dp"
@@ -387,7 +405,7 @@
                 android:textSize="20sp" />
 
             <TextView
-                android:id="@+id/ShippingProvinceTextViewProfile"
+                android:id="@+id/ShippingProvinceProfile"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="60dp"
@@ -452,130 +470,6 @@
                 android:text=""
                 android:textSize="20sp"
                 android:textStyle="italic" />
-
-            <TextView
-                android:id="@+id/BillingTextViewProfile"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginBottom="5dp"
-                android:text="Fatturazione"
-                android:textSize="30sp" />
-
-            <TextView
-                android:id="@+id/BillingNationTextViewProfile"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="40dp"
-                android:layout_marginBottom="5dp"
-                android:text="Nazione:"
-                android:textSize="20sp" />
-
-            <TextView
-                android:id="@+id/BillingNationProfile"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="60dp"
-                android:layout_marginBottom="5dp"
-                android:text=""
-                android:textSize="20sp"
-                android:textStyle="italic" />
-
-            <TextView
-                android:id="@+id/BillingRegionTextViewProfile"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="40dp"
-                android:layout_marginBottom="5dp"
-                android:text="Regione:"
-                android:textSize="20sp" />
-
-            <TextView
-                android:id="@+id/BillingRegionProfile"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="60dp"
-                android:layout_marginBottom="5dp"
-                android:text=""
-                android:textSize="20sp"
-                android:textStyle="italic" />
-
-            <TextView
-                android:id="@+id/BillingProvinceTextViewProfile"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="40dp"
-                android:layout_marginBottom="5dp"
-                android:text="Provincia:"
-                android:textSize="20sp" />
-
-            <TextView
-                android:id="@+id/BillingProvinceProfile"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="60dp"
-                android:layout_marginBottom="5dp"
-                android:text=""
-                android:textSize="20sp"
-                android:textStyle="italic" />
-
-            <TextView
-                android:id="@+id/BillingCityTextViewProfile"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="40dp"
-                android:layout_marginBottom="5dp"
-                android:text="Città"
-                android:textSize="20sp" />
-
-            <TextView
-                android:id="@+id/BillingCityProfile"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="60dp"
-                android:layout_marginBottom="5dp"
-                android:text=""
-                android:textSize="20sp"
-                android:textStyle="italic" />
-
-            <TextView
-                android:id="@+id/BillingAddressTextViewProfile"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="40dp"
-                android:layout_marginBottom="5dp"
-                android:text="Indirizzo:"
-                android:textSize="20sp" />
-
-            <TextView
-                android:id="@+id/BillingAddressProfile"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="60dp"
-                android:layout_marginBottom="5dp"
-                android:text=""
-                android:textSize="20sp"
-                android:textStyle="italic" />
-
-            <TextView
-                android:id="@+id/BillingCAPTextViewProfile"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="40dp"
-                android:layout_marginBottom="5dp"
-                android:text="CAP:"
-                android:textSize="20sp" />
-
-            <TextView
-                android:id="@+id/BillingCAPProfile"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="60dp"
-                android:layout_marginBottom="5dp"
-                android:text=""
-                android:textSize="20sp"
-                android:textStyle="italic" />
-
         </LinearLayout>
     </ScrollView>
 

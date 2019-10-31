@@ -6,12 +6,20 @@ import com.amazonaws.mobileconnectors.dynamodbv2.dynamodbmapper.DynamoDBTable;
 
 @DynamoDBTable(tableName = "Account")
 public class AccountEntity {
-    private String fiscalCode, email, password;
+    private String fiscalCode, email, password, tipo;
 
     public AccountEntity() {
         fiscalCode = null;
         email = null;
         password = null;
+        tipo = null;
+    }
+
+    public AccountEntity(String fiscalCode, String email, String password, String tipo) {
+        setFiscalCode(fiscalCode);
+        setEmail(email);
+        setPassword(password);
+        setTipo(tipo);
     }
 
     @DynamoDBHashKey(attributeName = "FiscalCode")
@@ -27,12 +35,7 @@ public class AccountEntity {
             this.fiscalCode = fiscalCode;
     }
 
-    public AccountEntity(String email, String password) {
-        setEmail(email);
-        setPassword(password);
-    }
-
-    @DynamoDBAttribute(attributeName = "Email") //E' un campo di account non di user
+    @DynamoDBAttribute(attributeName = "Email")
     public String getEmail() {
         return email;
     }
@@ -44,7 +47,7 @@ public class AccountEntity {
             this.email = email;
     }
 
-    @DynamoDBAttribute(attributeName = "Password") //E' un campo di account non di user
+    @DynamoDBAttribute(attributeName = "Password")
     public String getPassword() {
         return password;
     }
@@ -54,5 +57,17 @@ public class AccountEntity {
             this.password = "Non definito";
         else
             this.password = password;
+    }
+
+    @DynamoDBAttribute(attributeName = "Type") //E' un campo di account non di user
+    public String getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(String tipo) {
+        if (tipo == null)
+            this.tipo = "Non definito";
+        else
+            this.tipo = tipo;
     }
 }

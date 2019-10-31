@@ -14,6 +14,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
+import static com.example.home.Boundary.MainActivity.autenticazione;
 import static com.example.home.Boundary.MainActivity.dynamoDBMapper;
 
 @DynamoDBTable(tableName = "User")
@@ -46,8 +47,8 @@ public class ClientEntity {
         shippingAddress = null;
     }
 
-    public ClientEntity(String fiscalCode, String gender, String name, String surname, String email, String password, String birthDate, String birthNation, String birthProvince, String birthCity, String residenceNation, String residenceRegion, String residenceProvince, String residenceCity, String residenceCAP, String residenceAddress, String shippingNation, String shippingRegion, String shippingProvince, String shippingCity, String shippingCAP, String shippingAddress) {
-        account = new AccountEntity(email, password);
+    public ClientEntity(String email, String password, String fiscalCode, String gender, String name, String surname, String birthDate, String birthNation, String birthProvince, String birthCity, String residenceNation, String residenceRegion, String residenceProvince, String residenceCity, String residenceCAP, String residenceAddress, String shippingNation, String shippingRegion, String shippingProvince, String shippingCity, String shippingCAP, String shippingAddress) {
+        account = new AccountEntity(fiscalCode, email, password, "User");
 
         setFiscalCode(fiscalCode);
         setGender(gender);
@@ -63,12 +64,12 @@ public class ClientEntity {
         setResidenceCity(residenceCity);
         setResidenceCAP(residenceCAP);
         setResidenceAddress(residenceAddress);
-        setShippingNation(residenceNation);
-        setShippingRegion(residenceRegion);
-        setShippingProvince(residenceProvince);
-        setShippingCity(residenceCity);
-        setShippingCAP(residenceCAP);
-        setShippingAddress(residenceAddress);
+        setShippingNation(shippingNation);
+        setShippingRegion(shippingRegion);
+        setShippingProvince(shippingProvince);
+        setShippingCity(shippingCity);
+        setShippingCAP(shippingCAP);
+        setShippingAddress(shippingAddress);
     }
 
     public ClientEntity(String fiscalCode) {
@@ -317,78 +318,132 @@ public class ClientEntity {
             this.shippingAddress = shippingAddress;
     }
 
-    /*public ClientEntity read() {
-        Table table = dynamoDB.getTable("User");
-        Table tableAccount = dynamoDB.getTable("Account");
+    public ClientEntity clone() {
+        ClientEntity clone = new ClientEntity();
+
+        clone.account = new AccountEntity(this.account.getFiscalCode(), this.account.getEmail(), this.account.getPassword(), "User");
+
+        clone.setName(this.getName());
+        clone.setSurname(this.getSurname());
+        clone.setGender(this.getGender());
+        clone.setBirthDate(this.getBirthDate());
+        clone.setFiscalCode(this.getFiscalCode());
+        clone.setBirthNation(this.getBirthNation());
+        clone.setBirthProvince(this.getBirthProvince());
+        clone.setBirthCity(this.getBirthCity());
+        clone.setResidenceNation(this.getResidenceNation());
+        clone.setResidenceRegion(this.getResidenceRegion());
+        clone.setResidenceProvince(this.getResidenceProvince());
+        clone.setResidenceCity(this.getResidenceCity());
+        clone.setResidenceAddress(this.getResidenceAddress());
+        clone.setResidenceCAP(this.getResidenceCAP());
+        clone.setShippingNation(this.getShippingNation());
+        clone.setShippingRegion(this.getShippingRegion());
+        clone.setShippingProvince(this.getShippingProvince());
+        clone.setShippingCity(this.getShippingCity());
+        clone.setShippingAddress(this.getShippingAddress());
+        clone.setShippingCAP(this.getShippingCAP());
+
+        return clone;
+    }
+
+    public boolean create() throws RequiredFieldsException {
+        final ClientEntity clone = this.clone();
+
+        clone.checkRequiredFields();
+
+        Thread t = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                dynamoDBMapper.save(clone);
+                dynamoDBMapper.save(clone.account);
+            }
+        });
+
+        t.start();
 
         try {
-            GetItemSpec spec = new GetItemSpec().withPrimaryKey("FiscalCode", this.fiscalCode);
-            GetItemSpec specAccount = new GetItemSpec().withPrimaryKey("FiscalCode", this.fiscalCode);
-
-            System.out.println("Attempting to read the item...");
-            Item outcome = table.getItem(spec);
-            Item outcomeAccount = tableAccount.getItem(specAccount);
-            System.out.println("GetItem succeeded: " + outcome + outcomeAccount);
-
-            this.fiscalCode = outcome.getString("FiscalCode");
-            this.gender = outcome.getString("Gender");
-            this.name = outcome.getString("Nominative");
-            this.surname = outcome.getString("Surname");
-            this.email = outcomeAccount.getString("Email");
-            this.password = outcomeAccount.getString("Password");
-            this.birthDate = outcome.getString("BirthDate");
-            this.birthNation = outcome.getString("BirthNation");
-            this.birthProvince = outcome.getString("BirthProvince");
-            this.birthCity = outcome.getString("BirthCity");
-            this.residenceNation = outcome.getString("ResidenceNation");
-            this.residenceRegion = outcome.getString("ResidenceRegion");
-            this.residenceProvince = outcome.getString("ResidenceProvince");
-            this.residenceCity = outcome.getString("ResidenceCity");
-            this.residenceCAP = outcome.getString("ResidenceCAP");
-            this.residenceAddress = outcome.getString("ResidenceAddress");
-            this.shippingNation = outcome.getString("ShippingNation");
-            this.shippingRegion = outcome.getString("ShippingRegion");
-            this.shippingProvince = outcome.getString("ShippingProvince");
-            this.shippingCity = outcome.getString("ShippingCity");
-            this.shippingCAP = outcome.getString("ShippingCAP");
-            this.shippingAddress = outcome.getString("ShippingAddress");
-
-            return this;
-        } catch (Exception e) {
-            System.err.println("Unable to read item: " + this.fiscalCode);
-            System.err.println(e.getMessage());
-        }
-
-        return null;
-    }*/
-
-    /*public boolean delete() {
-        Table table = dynamoDB.getTable("User");
-        Table tableAccount = dynamoDB.getTable("Account");
-
-        try {
-            DeleteItemSpec deleteItemSpec = new DeleteItemSpec().withPrimaryKey("FiscalCode", fiscalCode);
-            DeleteItemSpec deleteItemSpecAccount = new DeleteItemSpec().withPrimaryKey("FiscalCode", fiscalCode);
-
-            System.out.println("Attempting article conditional delete...");
-            DeleteItemOutcome outcome = table.deleteItem(deleteItemSpec);
-            DeleteItemOutcome outcomeAccount = tableAccount.deleteItem(deleteItemSpecAccount);
-            System.out.println("DeleteItem succeeded");
+            t.join();
 
             return true;
         } catch (Exception e) {
-            System.err.println("Unable to delete item: " + fiscalCode);
-            System.err.println(e.getMessage());
+            return false;
         }
+    }
 
-        return false;
-    }*/
+    public boolean update() throws RequiredFieldsException {
+        final ClientEntity clone = this.clone();
+
+        clone.checkRequiredFields();
+
+        Thread t = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                dynamoDBMapper.save(clone);
+            }
+        });
+
+        t.start();
+
+        try {
+            t.join();
+
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
+    }
+
+    public boolean checkEmail(String email) {
+        Map<String, AttributeValue> eav = new HashMap<String, AttributeValue>();
+        eav.put(":val1", new AttributeValue().withS(email));
+
+        DynamoDBScanExpression scanExpression = new DynamoDBScanExpression().withFilterExpression("Email = :val1").withExpressionAttributeValues(eav);
+        List<AccountEntity> lista = dynamoDBMapper.parallelScan(AccountEntity.class, scanExpression, 16);
+
+        Iterator<AccountEntity> iteratore = lista.iterator();
+        if (iteratore.hasNext())
+            return false;
+        else
+            return true;
+    }
 
     private void checkFields() throws RequiredFieldsException {
         if(account.getEmail() == null)
             throw new RequiredFieldsException("Email");
         if(account.getPassword() == null)
             throw new RequiredFieldsException("Password");
+    }
+
+    public void checkRequiredFields() throws RequiredFieldsException {
+        if ((getName().equals("")) || (getName() == null))
+            throw new RequiredFieldsException("Nome");
+        if ((getSurname().equals("")) || (getSurname() == null))
+            throw new RequiredFieldsException("Cognome");
+        if ((getGender().equals("")) || (getGender() == null))
+            throw new RequiredFieldsException("Sesso");
+        if ((getBirthDate().equals("")) || (getBirthDate() == null))
+            throw new RequiredFieldsException("Data di Nascita");
+        if ((getFiscalCode().equals("")) || (getFiscalCode() == null))
+            throw new RequiredFieldsException("Codice Fiscale");
+        if ((getBirthNation().equals("")) || (getBirthNation() == null))
+            throw new RequiredFieldsException("Nazione di Nascita");
+        if ((getBirthProvince().equals("")) || (getBirthProvince() == null))
+            throw new RequiredFieldsException("Provincia di Nascita");
+        if ((getBirthCity().equals("")) || (getBirthCity() == null))
+            throw new RequiredFieldsException("Città di Nascita");
+        if ((getResidenceNation().equals("")) || (getResidenceNation() == null))
+            throw new RequiredFieldsException("Nazione di Residenza");
+        if ((getResidenceRegion().equals("")) || (getResidenceRegion() == null))
+            throw new RequiredFieldsException("Regione di Residenza");
+        if ((getResidenceProvince().equals("")) || (getResidenceProvince() == null))
+            throw new RequiredFieldsException("Provincia di Residenza");
+        if ((getResidenceCity().equals("")) || (getResidenceCity() == null))
+            throw new RequiredFieldsException("Città di Residenza");
+        if ((getResidenceAddress().equals("")) || (getResidenceAddress() == null))
+            throw new RequiredFieldsException("Indirizzo di Residenza");
+        if ((getResidenceCAP().equals("")) || (getResidenceCAP() == null))
+            throw new RequiredFieldsException("CAP di Residenza");
     }
 
     public ClientEntity login() throws RequiredFieldsException {
@@ -417,6 +472,7 @@ public class ClientEntity {
                         @Override
                         public void run() {
                             client[0] = dynamoDBMapper.load(ClientEntity.class, accountResult.getFiscalCode());
+                            client[0].account = accountResult;
                         }
                     });
 

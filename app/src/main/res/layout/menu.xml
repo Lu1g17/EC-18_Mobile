@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/ConstraintLayoutMenu"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:visibility="visible">
 
     <TextView
         android:id="@+id/SectionTextViewMenu"
@@ -26,16 +27,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/LoginButtonMenu"
-        android:layout_width="80dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="10dp"
-        android:background="@android:color/transparent"
-        android:text="Login"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
         android:id="@+id/LinearLayoutMenu"
@@ -82,14 +73,27 @@
             android:layout_marginTop="10dp"
             android:layout_marginBottom="10dp" />
 
-        <TextView
-            android:id="@+id/ProfileTextViewMenu"
+        <Button
+            android:id="@+id/LoginButtonMenu"
             android:layout_width="160dp"
             android:layout_height="30dp"
             android:layout_marginBottom="10dp"
-            android:text="Profilo"
+            android:background="@android:color/transparent"
+            android:text="Login"
             android:textAlignment="center"
-            android:textSize="18sp" />
+            android:textAllCaps="false"
+            android:textSize="16sp" />
+
+        <Button
+            android:id="@+id/LogoutButtonMenu"
+            android:layout_width="160dp"
+            android:layout_height="30dp"
+            android:layout_marginBottom="10dp"
+            android:background="@android:color/transparent"
+            android:text="Logout"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textSize="16sp" />
 
     </LinearLayout>
 

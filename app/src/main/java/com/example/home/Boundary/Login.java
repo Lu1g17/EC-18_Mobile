@@ -1,11 +1,13 @@
 package com.example.home.Boundary;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.home.Control.ClientControl;
@@ -43,9 +45,31 @@ public class Login extends AppCompatActivity {
                     autenticazione =  new ClientControl().login(email.getText().toString(), password.getText().toString());
 
                     if (autenticazione != null) {
-                        Intent login = new Intent(Login.this, MainActivity.class);
+                        AlertDialog alertDialog = new AlertDialog.Builder(Login.this).create();
+                        alertDialog.setTitle("Avviso");
+                        alertDialog.setMessage("Benvenuto " + autenticazione.getName() + " " + autenticazione.getSurname());
+                        alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
+                                new DialogInterface.OnClickListener() {
+                                    public void onClick(DialogInterface dialog, int which) {
+                                        dialog.dismiss();
 
-                        startActivity(login);
+                                        Intent login = new Intent(Login.this, MainActivity.class);
+                                        startActivity(login);
+
+                                    }
+                                });
+                        alertDialog.show();
+                    } else {
+                        AlertDialog alertDialog = new AlertDialog.Builder(Login.this).create();
+                        alertDialog.setTitle("Errore");
+                        alertDialog.setMessage("Credenziali errate");
+                        alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
+                                new DialogInterface.OnClickListener() {
+                                    public void onClick(DialogInterface dialog, int which) {
+                                        dialog.dismiss();
+                                    }
+                                });
+                        alertDialog.show();
                     }
                 } catch (RequiredFieldsException re) {
                     System.err.println("Unable to check login because there are required fields not filled: ");

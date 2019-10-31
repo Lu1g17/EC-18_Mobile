@@ -72,7 +72,7 @@
                 android:textSize="20sp" />
 
             <EditText
-                android:id="@+id/NameEditTextProfileUpdate"
+                android:id="@+id/NameProfileUpdate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="60dp"
@@ -91,7 +91,7 @@
                 android:textSize="20sp" />
 
             <EditText
-                android:id="@+id/SurnameEditTextProfileUpdate"
+                android:id="@+id/SurnameProfileUpdate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="60dp"
@@ -109,14 +109,15 @@
                 android:text="* Sesso:"
                 android:textSize="20sp" />
 
-            <Spinner
-                android:id="@+id/GenderSpinnerProfileUpdate"
-                android:layout_width="160dp"
-                android:layout_height="30dp"
+            <EditText
+                android:id="@+id/GenderProfileUpdate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="60dp"
                 android:layout_marginBottom="5dp"
-                android:entries="@array/MenuUomo"
-                android:textAlignment="center" />
+                android:text=""
+                android:textSize="20sp"
+                android:textStyle="italic" />
 
             <TextView
                 android:id="@+id/BirthDateTextViewProfileUpdate"
@@ -129,7 +130,7 @@
                 android:textSize="20sp" />
 
             <EditText
-                android:id="@+id/DateEditTextProfileUpdate"
+                android:id="@+id/BirthDateProfileUpdate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="60dp"
@@ -148,7 +149,74 @@
                 android:textSize="20sp" />
 
             <EditText
-                android:id="@+id/FiscalCodeEditTextProfileUpdate"
+                android:id="@+id/FiscalCodeProfileUpdate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="60dp"
+                android:layout_marginBottom="5dp"
+                android:editable="false"
+                android:text=""
+                android:textSize="20sp"
+                android:textStyle="italic" />
+
+            <TextView
+                android:id="@+id/BirthTextViewProfileUpdate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="5dp"
+                android:text="Nascita"
+                android:textSize="30sp" />
+
+            <TextView
+                android:id="@+id/BirthNationTextViewProfileUpdate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="40dp"
+                android:layout_marginBottom="5dp"
+                android:text="* Nazione:"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/BirthNationProfileUpdate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="60dp"
+                android:layout_marginBottom="5dp"
+                android:text=""
+                android:textSize="20sp"
+                android:textStyle="italic" />
+
+            <TextView
+                android:id="@+id/BirthProvinceTextViewProfileUpdate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="40dp"
+                android:layout_marginBottom="5dp"
+                android:text="* Provincia:"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/BirthProvinceProfileUpdate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="60dp"
+                android:layout_marginBottom="5dp"
+                android:text=""
+                android:textSize="20sp"
+                android:textStyle="italic" />
+
+            <TextView
+                android:id="@+id/BirthCityTextViewProfileUpdate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="40dp"
+                android:layout_marginBottom="5dp"
+                android:text="* Città"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/BirthCityProfileUpdate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="60dp"
@@ -176,7 +244,7 @@
                 android:textSize="20sp" />
 
             <EditText
-                android:id="@+id/ResidenceNationEditTextProfileUpdate"
+                android:id="@+id/ResidenceNationProfileUpdate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="60dp"
@@ -195,7 +263,7 @@
                 android:textSize="20sp" />
 
             <EditText
-                android:id="@+id/ResidenceRegionEditTextProfileUpdate"
+                android:id="@+id/ResidenceRegionProfileUpdate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="60dp"
@@ -214,7 +282,7 @@
                 android:textSize="20sp" />
 
             <EditText
-                android:id="@+id/ResidenceProvinceEditTextProfileUpdate"
+                android:id="@+id/ResidenceProvinceProfileUpdate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="60dp"
@@ -233,7 +301,7 @@
                 android:textSize="20sp" />
 
             <EditText
-                android:id="@+id/ResidenceCityEditTextProfileUpdate"
+                android:id="@+id/ResidenceCityProfileUpdate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="60dp"
@@ -252,7 +320,7 @@
                 android:textSize="20sp" />
 
             <EditText
-                android:id="@+id/ResidenceAddressEditTextProfileUpdate"
+                android:id="@+id/ResidenceAddressProfileUpdate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="60dp"
@@ -271,7 +339,7 @@
                 android:textSize="20sp" />
 
             <EditText
-                android:id="@+id/ResidenceCAPEditTextProfileUpdate"
+                android:id="@+id/ResidenceCAPProfileUpdate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="60dp"
@@ -299,7 +367,7 @@
                 android:textSize="20sp" />
 
             <EditText
-                android:id="@+id/ShippingNationEditTextProfileUpdate"
+                android:id="@+id/ShippingNationProfileUpdate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="60dp"
@@ -318,7 +386,7 @@
                 android:textSize="20sp" />
 
             <EditText
-                android:id="@+id/ShippingRegionEditTextProfileUpdate"
+                android:id="@+id/ShippingRegionProfileUpdate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="60dp"
@@ -337,7 +405,7 @@
                 android:textSize="20sp" />
 
             <EditText
-                android:id="@+id/ShippingProvinceEditTextProfileUpdate"
+                android:id="@+id/ShippingProvinceProfileUpdate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="60dp"
@@ -356,7 +424,7 @@
                 android:textSize="20sp" />
 
             <EditText
-                android:id="@+id/ShippingCityEditTextProfileUpdate"
+                android:id="@+id/ShippingCityProfileUpdate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="60dp"
@@ -375,7 +443,7 @@
                 android:textSize="20sp" />
 
             <EditText
-                android:id="@+id/ShippingAddressEditTextProfileUpdate"
+                android:id="@+id/ShippingAddressProfileUpdate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="60dp"
@@ -394,130 +462,7 @@
                 android:textSize="20sp" />
 
             <EditText
-                android:id="@+id/ShippingCAPEditTextProfileUpdate"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="60dp"
-                android:layout_marginBottom="5dp"
-                android:text=""
-                android:textSize="20sp"
-                android:textStyle="italic" />
-
-            <TextView
-                android:id="@+id/BillingTextViewProfileUpdate"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginBottom="5dp"
-                android:text="Fatturazione"
-                android:textSize="30sp" />
-
-            <TextView
-                android:id="@+id/BillingNationTextViewProfileUpdate"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="40dp"
-                android:layout_marginBottom="5dp"
-                android:text="Nazione:"
-                android:textSize="20sp" />
-
-            <EditText
-                android:id="@+id/BillingNationEditTextProfileUpdate"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="60dp"
-                android:layout_marginBottom="5dp"
-                android:text=""
-                android:textSize="20sp"
-                android:textStyle="italic" />
-
-            <TextView
-                android:id="@+id/BillingRegionTextViewProfileUpdate"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="40dp"
-                android:layout_marginBottom="5dp"
-                android:text="Regione:"
-                android:textSize="20sp" />
-
-            <EditText
-                android:id="@+id/BillingRegionEditTextProfileUpdate"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="60dp"
-                android:layout_marginBottom="5dp"
-                android:text=""
-                android:textSize="20sp"
-                android:textStyle="italic" />
-
-            <TextView
-                android:id="@+id/BillingProvinceTextViewProfileUpdate"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="40dp"
-                android:layout_marginBottom="5dp"
-                android:text="Provincia:"
-                android:textSize="20sp" />
-
-            <EditText
-                android:id="@+id/BillingProvinceEditTextProfileUpdate"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="60dp"
-                android:layout_marginBottom="5dp"
-                android:text=""
-                android:textSize="20sp"
-                android:textStyle="italic" />
-
-            <TextView
-                android:id="@+id/BillingCityTextViewProfileUpdate"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="40dp"
-                android:layout_marginBottom="5dp"
-                android:text="Città"
-                android:textSize="20sp" />
-
-            <EditText
-                android:id="@+id/BillingCityEditTextProfileUpdate"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="60dp"
-                android:layout_marginBottom="5dp"
-                android:text=""
-                android:textSize="20sp"
-                android:textStyle="italic" />
-
-            <TextView
-                android:id="@+id/BillingAddressTextViewProfileUpdate"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="40dp"
-                android:layout_marginBottom="5dp"
-                android:text="Indirizzo:"
-                android:textSize="20sp" />
-
-            <EditText
-                android:id="@+id/BillingAddressEditTextProfileUpdate"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="60dp"
-                android:layout_marginBottom="5dp"
-                android:text=""
-                android:textSize="20sp"
-                android:textStyle="italic" />
-
-            <TextView
-                android:id="@+id/BillingCAPTextViewProfileUpdate"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="40dp"
-                android:layout_marginBottom="5dp"
-                android:text="CAP:"
-                android:textSize="20sp" />
-
-            <EditText
-                android:id="@+id/BillingCAPEditTextProfileUpdate"
+                android:id="@+id/ShippingCAPProfileUpdate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="60dp"

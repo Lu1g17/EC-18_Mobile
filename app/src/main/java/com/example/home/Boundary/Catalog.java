@@ -1,29 +1,18 @@
 package com.example.home.Boundary;
 
 import android.content.Intent;
-import android.graphics.Canvas;
 import android.graphics.Color;
-import android.graphics.ColorFilter;
 import android.graphics.Typeface;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.CheckBox;
-import android.widget.GridLayout;
 import android.widget.GridView;
 import android.widget.ImageButton;
-import android.widget.ImageView;
 import android.widget.TextView;
-
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-
 import com.example.home.Control.ArticleControl;
 import com.example.home.Entity.ArticleEntity;
 import com.example.home.R;
-
 import java.util.ArrayList;
 
 import static com.example.home.Boundary.MainActivity.autenticazione;
@@ -31,7 +20,7 @@ import static com.example.home.Boundary.MainActivity.autenticazione;
 
 public class Catalog extends AppCompatActivity {
 
-    public static String gender, category;
+    public static String gender = null, category = null;
     Button manButton, womanButton, kidButton;
     TextView clothingButton, footwearButton, accessoriesButton;
 
@@ -162,8 +151,16 @@ public class Catalog extends AppCompatActivity {
             }
         });
 
-        setGender("Uomo");
-        setCategory("Abbigliamento");
+        if (gender == null)
+            setGender("Uomo");
+        else
+            setGender(gender);
+
+        if (category == null)
+            setCategory("Abbigliamento");
+        else
+            setCategory(category);
+
         refresh();
     }
 

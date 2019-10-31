@@ -1,15 +1,21 @@
 package com.example.home.Boundary;
 
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.home.Control.ArticleControl;
+import com.example.home.Control.ShoppingCartControl;
 import com.example.home.Entity.ArticleEntity;
 import com.example.home.R;
 import com.squareup.picasso.Picasso;
+import static com.example.home.Boundary.MainActivity.autenticazione;
 
 public class Article extends AppCompatActivity {
 
@@ -23,7 +29,7 @@ public class Article extends AppCompatActivity {
 
         code = getIntent().getExtras().getString("code");
 
-        ArticleEntity article = new ArticleControl().read(code);
+        final ArticleEntity article = new ArticleControl().read(code);
 
         ImageView attached = (ImageView) findViewById(R.id.ImageViewArticle);
         TextView code = (TextView) findViewById(R.id.GenderArticle);
@@ -40,7 +46,7 @@ public class Article extends AppCompatActivity {
         TextView composition = (TextView) findViewById(R.id.CompositionArticle);
         TextView warnings = (TextView) findViewById(R.id.WarningsArticle);
         TextView description = (TextView) findViewById(R.id.DescriptionArticle);
-        ImageView add = findViewById(R.id.AddShoppingCartImageViewArticle); //settare il bottone per add
+        ImageView add = findViewById(R.id.AddShoppingCartImageViewArticle);
 
         Picasso.with(this).load(article.getAttached()).into(attached);
         code.setText(article.getCode());
@@ -58,7 +64,47 @@ public class Article extends AppCompatActivity {
         warnings.setText(article.getWarnings());
         description.setText(article.getDescription());
 
-        add.setOnClickListener();
+        if (autenticazione == null) {
+            add.setEnabled(false);
+            add.setVisibility(View.GONE);
+        } else {
+            add.setEnabled(true);
+            add.setVisibility(View.VISIBLE);
+        }
+
+        add.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (new ShoppingCartControl().add(autenticazione.getFiscalCode(), article.getCode()) == true) {
+                    AlertDialog alertDialog = new AlertDialog.Builder(Article.this).create();
+                    alertDialog.setTitle("Avviso");
+                    alertDialog.setMessage("L'articolo è stato aggiunto al carrello");
+                    alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
+                            new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int which) {
+                                    dialog.dismiss();
+
+                                    Intent catalog = new Intent(Article.this, Catalog.class);
+                                    startActivity(catalog);
+
+                                }
+                            });
+                    alertDialog.show();
+                } else {
+                    AlertDialog alertDialog = new AlertDialog.Builder(Article.this).create();
+                    alertDialog.setTitle("Errore");
+                    alertDialog.setMessage("L'articolo non è stato aggiunto al carrello");
+                    alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
+                            new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int which) {
+                                    dialog.dismiss();
+
+                                }
+                            });
+                    alertDialog.show();
+                }
+            }
+        });
     }
 }
 
